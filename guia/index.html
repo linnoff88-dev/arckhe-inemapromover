@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>inemapromover — fábrica de reels do INEMA.club</title>
+<meta name="description" content="Pipeline que transforma um assunto em roteiros, avatares HeyGen e reels verticais publicados por público no YouTube.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">📣</span> inemapromover</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">O que é</a>
+    <a class="sec" href="#fluxo">Como funciona</a>
+    <a class="sec" href="#componentes">Componentes</a>
+    <a class="sec" href="#guia">Guia de uso</a>
+    <a class="sec" href="#dicas">Dicas</a>
+    <a class="sec" href="#roadmap">Roadmap</a>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/inemapromover" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Pipeline de divulgação · INEMA.club</span>
+      <h1>Um assunto vira <span class="amb">reels</span> pra 11 públicos, sozinho.</h1>
+      <p class="lead">Texto → avatar HeyGen → reel vertical com capa de impacto → canal do YouTube certo. Um pipeline de 4 fases, cada uma com sua skill, rodando sobre Claude Code.</p>
+      <div class="cta">
+        <a class="btn" href="#guia">Começar o guia</a>
+        <a class="btn ghost" href="https://github.com/inematds/inemapromover" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/hero.png" alt="Capa do projeto inemapromover"></figure>
+  </div>
+</header>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Fábrica de reels segmentados por público</h2>
+  <p class="sub">Um assunto entra de um lado; do outro saem reels verticais prontos, um por público, cada um com gancho e tom próprios — e a publicação no canal certo é automática.</p>
+  <div class="grid g3">
+    <div class="card"><h3>📣 Um assunto, 11 públicos</h3><p>Cada assunto gera 3 versões de roteiro por público (pessoa comum, jovens, profissionais, mulheres, empreendedores, técnicos, 40+, 60+, educadores, criadores, recolocação) — cada um com seu próprio gatilho e promessa.</p></div>
+    <div class="card"><h3>🧑‍🎤 Avatar real, sem gravar</h3><p>O roteiro vira fala de avatar no HeyGen (Nei Maldaner / INEMA TIME), sempre pelo navegador, sem gastar créditos de API à toa.</p></div>
+    <div class="card"><h3>🎬 Reel pronto pro canal certo</h3><p>Cada avatar é empilhado num reel 9:16 com capa de impacto e enfileirado direto no canal YouTube do público correspondente — a publicação acontece sozinha.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>4 fases, uma skill por fase</h2>
+  <p class="sub">Cada fase do pipeline é uma skill do Claude Code, disparada em sequência a partir de um único assunto.</p>
+  <div class="flow">
+    <span>1. Textos</span><span class="arr">→</span>
+    <span>2. Avatar HeyGen</span><span class="arr">→</span>
+    <span>2.5 Download</span><span class="arr">→</span>
+    <span>3. Reel empilhado</span><span class="arr">→</span>
+    <span>4. Publicação no canal</span>
+  </div>
+  <div class="grid g3" style="margin-top:28px">
+    <div class="card"><h3>1 · inemaclub-textos</h3><p>Assunto → 3 versões de roteiro falado (~35-40s) por público, com seções FALA e SOBREPOSIÇÕES.</p></div>
+    <div class="card"><h3>2 · heygen-avatar-nei-III</h3><p>FALA → vídeo de avatar no HeyGen, sempre via navegador (Avatar III, ilimitado). Título padronizado, 16:9 1080p.</p></div>
+    <div class="card"><h3>2.5 · heygen-download-nei</h3><p>Baixa os renders (via API quando possível, sem custo) para a pasta de output do assunto.</p></div>
+    <div class="card"><h3>3 · inemaclub-reel</h3><p>Enfileira cada avatar no bot de edição (mkivideos) em modo "capa impacto", no lives do público certo.</p></div>
+    <div class="card"><h3>4 · automática</h3><p>O pipeline do canal do público publica o reel no YouTube e avisa no Telegram.</p></div>
+  </div>
+  <h3 style="margin-top:36px;font-family:Sora;font-size:1.05rem">Onde cada arquivo mora</h3>
+  <p class="sub" style="margin-top:.4em">O avatar e o reel não moram neste repositório — só textos/estado ficam aqui. Os binários vivem nos projetos que renderizam.</p>
+  <pre><span class="c"># avatar (fase 2) — nuvem HeyGen "Meus Projetos"</span>
+<span class="c"># ↓ fase 2.5 (download automático)</span>
+inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
+
+<span class="c"># reel (fase 3) — renderizado pelo mkivideos</span>
+~/projetos/mkivideos/renders/mkivideo-&lt;jobId&gt;-16.mp4
+<span class="c"># ↓ watcher do inemaccvbot copia pro destino</span>
+~/projetos/yt-pub-lives&lt;N&gt;/imports/videos/mkivideo-&lt;jobId&gt;-16.mp4
+<span class="c"># ↓ pipeline yt-pub-livesN publica (fase 4, automática)</span></pre>
+  <p class="sub">⚠️ O mkivideos só sobe via <code>systemctl --user restart mkivideos.service</code> — nunca <code>nohup</code>/<code>node dist/cli.js</code> cru. Sem o env var <code>MKIVIDEOS_RENDER_DIR</code> (absoluto) do systemd, o caminho gravado no job fica relativo e a cópia pro canal falha com <code>ENOENT</code> mesmo com o vídeo intacto — incidente real de 2026-07-19, documentado nos READMEs de <code>mkivideos</code> e <code>inemaccvbot</code>.</p>
+</div></section>
+
+<section id="componentes"><div class="wrap">
+  <span class="chip">Componentes do sistema</span>
+  <h2>As peças que o pipeline orquestra</h2>
+  <p class="sub">O <code>inemapromover</code> não roda sozinho: ele é a cola entre serviços que já precisam existir no ambiente do operador.</p>
+  <div class="grid g4">
+    <div class="card"><h3>🖥️ Claude Code</h3><p>Executa cada fase como skill, a partir de um pedido em texto — não há comandos de shell separados por fase.</p></div>
+    <div class="card"><h3>🧩 Claude in Chrome/Edge</h3><p>Extensão que dá ao Claude Code controle do navegador logado no HeyGen (fases 2 e 2.5).</p></div>
+    <div class="card"><h3>🎭 HeyGen (estúdio web)</h3><p>Gera o vídeo de avatar falando o roteiro da fase 1 — <code>app.heygen.com</code>, sessão logada.</p></div>
+    <div class="card"><h3>🤖 inemaccvbot</h3><p>Bot de Telegram — o comando <code>/promoclub</code> orquestra o pipeline inteiro: fase 1 → fase 2 automática → watcher → fase 3.</p></div>
+    <div class="card"><h3>⚙️ mkivideos</h3><p>Daemon/fila que efetivamente monta e renderiza os reels — dashboard nas portas <code>:3142</code>/<code>:3143</code>.</p></div>
+    <div class="card"><h3>🎬 skill reel-edita-inema</h3><p>Motor de composição usado pelo mkivideos no modo "capa de impacto" (topo/meio/base + legenda + CTA).</p></div>
+    <div class="card"><h3>📺 yt-pub-livesN</h3><p>Um pipeline por público (N = 21 a 31) que publica o reel pronto no canal YouTube correspondente.</p></div>
+    <div class="card"><h3>🔑 .env do HeyGen</h3><p>Chave da API usada só na fase 2.5 (download sem custo) — fica fora deste repo, lida via <code>HEYGEN_ENV_PATH</code>.</p></div>
+    <div class="card"><h3>🪟 wmctrl</h3><p>Foca a janela do Chromium sozinho antes da fase 2 — sem isso a aba do HeyGen fica <code>hidden</code> e trava.</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Instalação / pré-requisitos</span>
+  <h2>O que precisa estar no ar</h2>
+  <p class="sub">Este repositório não precisa de <code>npm install</code> nem build — é composto de skills (markdown) + um script Node standalone. O que precisa estar pronto é o ambiente ao redor.</p>
+  <div class="grid g3">
+    <div class="card"><h3>1 · Navegador (Claude Code)</h3><p>Em Linux/ARM64 com Chromium via snap, a extensão só é reconhecida iniciando com a flag <code>--chrome</code>.</p><pre><span class="c"># obrigatório nesta configuração</span>
+<span class="k">claude --chrome</span></pre></div>
+    <div class="card"><h3>2 · Conta HeyGen</h3><p>Logada no navegador da extensão, com avatar "Nei Maldaner", voz "INEMA TIME" e motor <b>Avatar III</b> (o único ilimitado na assinatura).</p></div>
+    <div class="card"><h3>3 · Bot de edição no ar</h3><p>Confirmar que os workers do mkivideos estão de pé e a fila responde antes de enfileirar.</p><pre><span class="c"># conferir workers</span>
+<span class="k">pgrep -af</span> <span class="s">'dist/cli.js run'</span>
+<span class="c"># ping na fila</span>
+<span class="k">curl -s</span> localhost:3142/api/stats</pre></div>
+    <div class="card"><h3>4 · Canais por público</h3><p>Uma pasta <code>yt-pub-livesN</code> por público (N = 21..31). Se faltar, a fase 3 cria o mínimo pra não travar o job — a configuração do canal (credenciais YouTube) é do operador.</p><pre><span class="c"># mínimo se a pasta ainda não existir</span>
+<span class="k">mkdir -p</span> ~/projetos/yt-pub-lives21/imports/videos</pre></div>
+    <div class="card"><h3>5 · Chave da API HeyGen</h3><p>Usada só na fase 2.5 (download sem custo), lida de um <code>.env</code> externo — nunca deste repo.</p><pre><span class="c"># antes de rodar a fase 2.5</span>
+<span class="k">export</span> HEYGEN_ENV_PATH=~/.config/heygen/.env
+<span class="k">node</span> scripts/list-videos.mjs --title <span class="s">"&lt;assunto&gt;"</span></pre></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Do assunto ao reel publicado</h2>
+  <p class="sub">As 4 fases rodam em sequência, cada uma pedida ao Claude Code como uma skill.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Gerar os textos por público</h3>
+    <p>Dá o assunto e pede os roteiros. Sai em <code>textos/&lt;assunto&gt;/&lt;publico&gt;.md</code>, um arquivo por público, 3 versões cada.</p>
+<pre><span class="k">/inemaclub-textos</span> "assunto da campanha"  <span class="c"># gera textos/&lt;slug&gt;/*.md</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Gerar os avatares no HeyGen</h3>
+    <p>Pega a seção FALA de cada roteiro e gera o vídeo do avatar, sempre pelo navegador (créditos de API só com pedido explícito), com o look do público. Via <code>/promoclub</code> do bot, dispara sozinha assim que a fase 1 termina.</p>
+<pre><span class="k">Use a skill heygen-avatar-nei-III</span> para o assunto "&lt;slug&gt;"  <span class="c"># gera 1 vídeo por público, ou automático via /promoclub</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Baixar os renders</h3>
+    <p>Traz os vídeos prontos do HeyGen para <code>output/&lt;assunto&gt;/avatares/</code>.</p>
+<pre><span class="k">Use a skill heygen-download-nei</span> para o assunto "&lt;slug&gt;"</pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Montar e enfileirar os reels</h3>
+    <p>Cada avatar vira um reel 9:16 empilhado (capa de impacto + avatar + explicativo) e entra na fila do lives do público certo.</p>
+<pre><span class="k">Use a skill inemaclub-reel</span> para o assunto "&lt;slug&gt;"  <span class="c"># enfileira no mkivideos</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Publicação automática</h3>
+    <p>Nada a fazer aqui: o pipeline <code>yt-pub-livesN</code> de cada público publica o reel no YouTube e o bot avisa no Telegram quando terminar.</p>
+<pre><span class="c"># acompanhar o status de um job específico</span>
+<span class="k">node dist/cli.js status</span> &lt;id&gt;</pre>
+  </div></div>
+</div></section>
+
+<section id="dicas"><div class="wrap">
+  <span class="chip">Dicas e pontos de atenção</span>
+  <h2>O que já mordeu no primeiro uso real</h2>
+  <p class="sub">Lições registradas em produção — para não repetir o mesmo tropeço.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🌐 Navegador é o elo mais frágil</h3><p>Sem <code>claude --chrome</code> a extensão não conecta. Abas "invisíveis" ou screenshots em branco geralmente são outro navegador pareado — use <code>list_connected_browsers</code> + <code>select_browser</code>.</p></div>
+    <div class="card"><h3>📎 Manifesto na pasta certa</h3><p>Chromium via snap só lê <code>~/snap/chromium/common/chromium/NativeMessagingHosts/</code> — se a extensão nunca conectar, copiar o manifesto do Claude Code pra lá.</p></div>
+    <div class="card"><h3>🎭 Confira os defaults do editor</h3><p>Já abriu com avatar "Annie" / motor Avatar IV (Premium!) em vez do padrão do estúdio. Sempre trocar para o look do público / INEMA TIME / Avatar III antes de gerar.</p></div>
+    <div class="card"><h3>🪟 Foco da aba é automático</h3><p>A fase 2 exige a janela do Chromium visível (tiptap do HeyGen não sincroniza numa aba <code>hidden</code>) — o bot resolve sozinho com <code>wmctrl -a Chromium</code> antes de cada render.</p></div>
+    <div class="card"><h3>🔌 RDP desconectado ≠ nada rodando</h3><p>Fechar o cliente RDP sem logout não mata o Xorg/Chromium — a sessão fica só "desconectada", em pé.</p></div>
+    <div class="card"><h3>🕵️ Verificação real, não confiança cega</h3><p>O subagente já reportou sucesso sem ter gerado nada (falso positivo visto em produção) — por isso a fase 2 sempre confere na API do HeyGen antes de declarar "concluído".</p></div>
+    <div class="card"><h3>💸 Render de avatar tem custo</h3><p>A fase 2 nunca gera as 3 versões de um público de uma vez sem pedido explícito, e nunca usa a rota API por padrão — só a rota navegador, sem custo extra na assinatura.</p></div>
+    <div class="card"><h3>📡 Ping antes de enfileirar</h3><p>Se o daemon do mkivideos estiver fora do ar, a fase 3 avisa e não enfileira — em vez de falhar em silêncio.</p></div>
+    <div class="card"><h3>📁 Canais podem não existir ainda</h3><p>A fase 3 cria o mínimo (<code>imports/videos/</code>) pra não travar o job, mas isso não configura o canal — a configuração real é responsabilidade do operador.</p></div>
+  </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Roadmap</span>
+  <h2>O que já roda e o que vem a seguir</h2>
+  <p class="sub">Fases validadas ponta a ponta em produção e pendências conhecidas.</p>
+  <div class="phase"><div class="tag">Fase 1-3</div><div class="d"><strong>Pipeline validado ponta a ponta</strong><span>Textos → avatar → download → reel enfileirado, testado com assunto real em produção.</span></div></div>
+  <div class="phase"><div class="tag">Fase 4</div><div class="d"><strong>Publicação automática</strong><span>Depende dos pipelines yt-pub-livesN de cada público, configurados fora deste repo.</span></div></div>
+  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Look por público</strong><span>Hoje o avatar usa um look único ("Nei Maldaner" / "INEMA TIME"); variar o look por público é evolução planejada.</span></div></div>
+  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Capa de impacto</strong><span>Refinar a sintaxe da instrução "capa impacto" no bot, usando o gatilho do público como headline.</span></div></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Claude Code</div><div class="pill">HeyGen</div><div class="pill">mkivideos</div>
+    <p style="margin-top:18px">inemapromover · pipeline interno de divulgação ·
+      <a href="https://github.com/inematds/inemapromover">inematds/inemapromover</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='inemapromover-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>
