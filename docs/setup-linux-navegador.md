@@ -49,7 +49,7 @@ No primeiro uso no Chromium Linux, o editor abriu com avatar "Annie" / voz
 "Annie - Lifelike" / motor Avatar IV (Premium!). Conferir e corrigir SEMPRE:
 
 - Avatar: **Nei Maldaner** (Choose Avatar → Recently Used/My Avatars)
-- Voz: **INEMA TIME**
+- Voz: **ARCKHÉ TIME**
 - Motion Engine: **Avatar III** (o único ilimitado — IV/V sêo Premium)
 
 ## 6. Rastro do setup
@@ -59,7 +59,7 @@ manualmente (o agente nêo deleta nada no HeyGen).
 
 ## 7. Aba `hidden` — a causa nº1 de a fase 2 travar (e a estratégia A→B)
 
-**Sintoma:** a fase 2 (automática, via `/promoclub` do inemaccvbot) acha o avatar,
+**Sintoma:** a fase 2 (automática, via `/promoclub` do ARCKHÉccvbot) acha o avatar,
 extrai as falas, navega até o editor — e para em "0 vídeos", reportando a aba
 presa em `document.visibilityState === 'hidden'`. O editor tiptap do HeyGen NêO
 sincroniza digitaçêo numa aba oculta, entêo a skill se recusa a gerar (e a
@@ -116,7 +116,7 @@ systemctl --user restart stack99     # reinicia a stack inteira (Xvfb+openbox+vn
 bash ~/stack99/stack99-check.sh      # processos + JANELA MAPEADA (o ponto que falhava)
 ```
 
-**Como a fase 2 usa:** o `fase2Runner` do inemaccvbot roda `claude --chrome -p`
+**Como a fase 2 usa:** o `fase2Runner` do ARCKHÉccvbot roda `claude --chrome -p`
 normal — a extensêo do `:99` aparece como navegador conectado e o prompt manda
 auto-selecionar o local/Linux sem perguntar. Nêo precisa de `DISPLAY` no runner.
 O subagente resolve `hidden` sozinho dentro do `:99` (xdotool windowactivate)

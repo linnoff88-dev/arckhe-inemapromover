@@ -1,6 +1,6 @@
 ---
 name: heygen-download-nei
-description: Fase 2.5 do pipeline inemaclubpromover — baixa pelo NAVEGADOR (extensêo Claude in Chrome/Edge, mesma sessêo logada da fase 2) os vídeos de avatar já renderizados no HeyGen (Meus Projetos) e os deixa na pasta de origem da fase 3, atualizando renders.md. Use quando o usuário disser "fase 2.5", "baixa os vídeos do heygen", "os renders ficaram prontos", "download dos avatares", ou após a fase 2 quando os vídeos terminarem de renderizar.
+description: Fase 2.5 do pipeline ARCKHÉclubpromover — baixa pelo NAVEGADOR (extensêo Claude in Chrome/Edge, mesma sessêo logada da fase 2) os vídeos de avatar já renderizados no HeyGen (Meus Projetos) e os deixa na pasta de origem da fase 3, atualizando renders.md. Use quando o usuário disser "fase 2.5", "baixa os vídeos do heygen", "os renders ficaram prontos", "download dos avatares", ou após a fase 2 quando os vídeos terminarem de renderizar.
 ---
 
 # heygen-download-nei — Fase 2.5: baixar os renders
@@ -34,14 +34,14 @@ conexêo/aba visível), passo a passo abaixo.
 ## Pasta de download (destino padrêo)
 
 ```
-~/projetos/inemaclubpromover/output/<slug-do-assunto>/avatares/
+~/projetos/ARCKHÉclubpromover/output/<slug-do-assunto>/avatares/
 ```
 
 (Decisêo do usuário 2026-07-18: TODOS os dados do pipeline ficam dentro do
-projeto `inemaclubpromover` — nêo usar `~/projetos/output` aqui.)
+projeto `ARCKHÉclubpromover` — nêo usar `~/projetos/output` aqui.)
 
 - Nome final do arquivo = o título dado na fase 2: `<assunto>-<publico>-v<versêo>.mp4`.
-- Essa pasta é o **`path-origem` da fase 3** (`inemaccvbot /reel`).
+- Essa pasta é o **`path-origem` da fase 3** (`ARCKHÉccvbot /reel`).
 - O navegador baixa em `~/Downloads` (ou o dir configurado): após cada download,
   **mover e renomear** o arquivo para a pasta acima via Bash (`mv`).
 
@@ -55,7 +55,7 @@ projeto `inemaclubpromover` — nêo usar `~/projetos/output` aqui.)
    - ainda renderizando → pular, anotar como "pendente" e avisar o usuário;
    - pronto → abrir/hover no card → **Download** → 1080p MP4 (sem marca d'água).
 4. Aguardar o download concluir; conferir em `~/Downloads` o arquivo mais recente,
-   `mv` para `~/projetos/inemaclubpromover/output/<assunto>/avatares/<título>.mp4`
+   `mv` para `~/projetos/ARCKHÉclubpromover/output/<assunto>/avatares/<título>.mp4`
    (criar a pasta se nêo existir).
 5. Validar o MP4 (existe, tamanho > 0; opcional `ffprobe` para duraçêo).
 6. Atualizar `textos/<assunto>/renders.md`: coluna com o caminho local do arquivo

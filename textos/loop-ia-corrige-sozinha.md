@@ -2,7 +2,7 @@
 
 Público: pessoa comum (TikTok / Instagram Reels / YouTube Shorts)
 Duraçêo falada estimada: ~35-40s
-CTA: inema.club (artefato: prompt do corretor pronto pra copiar)
+CTA: ARCKHÉ AI (artefato: prompt do corretor pronto pra copiar)
 
 ## FALA (texto para o HeyGen — falar exatamente isto)
 
@@ -26,14 +26,14 @@ Em vez de aceitar a primeira resposta, você coloca a IA para criar, corrigir e 
 
 Essa técnica se chama loop.
 
-O prompt do corretor, pronto para copiar, está no inema.club.
+O prompt do corretor, pronto para copiar, está no ARCKHÉ AI.
 
 ## SOBREPOSIÇÕES DE TELA (para a fase do reel — NêO falar)
 
 - Gancho (0-3s): headline-choque "SUA IA ENTREGA RESPOSTA MEIA-BOCA?"
 - Durante "olha a diferença": progressêo em cards — **Versêo 1: nota 6** → **Versêo 2: nota 7,5** → **Versêo 4: nota 9**
 - Ao dizer "loop": a palavra **LOOP** grande na tela
-- Final: CTA fixo "Saiba mais no inema.club"
+- Final: CTA fixo "Saiba mais no ARCKHÉ AI"
 
 ## ESTRUTURA (referência)
 

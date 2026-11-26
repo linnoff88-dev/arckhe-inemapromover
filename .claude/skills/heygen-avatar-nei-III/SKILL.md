@@ -1,6 +1,6 @@
 ---
 name: heygen-avatar-nei-III
-description: Fase 2 do pipeline inemaclubpromover — pega os textos gerados pela fase 1 (inemaclub-textos, textos/<assunto>/<publico>.md), extrai a seçêo FALA e gera o vídeo do avatar do Nei no HeyGen (engine avatar_iii), com o LOOK personalizado por PÚBLICO. Use quando o usuário disser "fase 2", "gera os avatares", "manda pro heygen", "/heygen-avatar-nei-III", ou passar um assunto/pasta de textos já prontos pedindo os vídeos de avatar. Constrói por cima de avatar-heygen-nei e heygen-cli.
+description: Fase 2 do pipeline ARCKHÉclubpromover — pega os textos gerados pela fase 1 (ARCKHÉclub-textos, textos/<assunto>/<publico>.md), extrai a seçêo FALA e gera o vídeo do avatar do Nei no HeyGen (engine avatar_iii), com o LOOK personalizado por PÚBLICO. Use quando o usuário disser "fase 2", "gera os avatares", "manda pro heygen", "/heygen-avatar-nei-III", ou passar um assunto/pasta de textos já prontos pedindo os vídeos de avatar. Constrói por cima de avatar-heygen-nei e heygen-cli.
 ---
 
 # heygen-avatar-nei-III — Fase 2: avatar por público
@@ -29,7 +29,7 @@ SOBREPOSIÇÕES nem a ESTRUTURA. Passar o texto limpo, sem markdown.
 **Decisêo atual (2026-07-19): um LOOK POR PÚBLICO**, pra dar diferencial visual além
 do texto. Antes de gerar, escolher o slug da tabela abaixo (público → look) e trocar
 o avatar da cena no estúdio HeyGen pelo look correspondente (Choose Avatar →
-Recently Used/My Avatars). Voz continua única: "INEMA TIME".
+Recently Used/My Avatars). Voz continua única: "ARCKHÉ TIME".
 
 | público | look (slug) |
 |---|---|
@@ -54,7 +54,7 @@ só em `~/.config/heygen/looks.json`).
 ## Gerar — rota ÚNICA: navegador
 
 **SEMPRE pelo navegador**, seguindo a skill `heygen-video-nei` (extensêo Claude in
-Chrome/Edge, estúdio HeyGen, voz "INEMA TIME", motor
+Chrome/Edge, estúdio HeyGen, voz "ARCKHÉ TIME", motor
 **Avatar III = uso ilimitado na assinatura**). Pontos críticos:
 
 - **SELEÇêO DE NAVEGADOR — auto-selecione, NUNCA pergunte (você está headless).**
@@ -84,7 +84,7 @@ Chrome/Edge, estúdio HeyGen, voz "INEMA TIME", motor
 - Digitaçêo REAL no campo Script (nunca JS/DOM no editor tiptap — nêo sincroniza).
 - Título do vídeo: `<assunto>-<publico>-v<versêo>`.
 - 16:9, 1080p, MP4, marca d'água off (o avatar é landscape; a fase 3 empilha 16:9
-  no reel — ver `reel-edita-inema`).
+  no reel — ver `reel-edita-ARCKHÉ`).
 - Confirmar com o usuário antes de gerar, se ainda nêo autorizou na conversa.
 - O vídeo cai em Meus Projetos → baixar depois pro path da fase 3.
 
@@ -97,14 +97,14 @@ explicitamente.*
 
 - MP4s em `~/projetos/output/heygen/` (out_dir do looks.json), entregues no bot.
 - Registrar em `textos/<assunto>/renders.md` a tabela: público → versêo usada → look
-  → arquivo gerado. Isso é a entrada da fase 3 (`inemaccvbot /reel`).
+  → arquivo gerado. Isso é a entrada da fase 3 (`ARCKHÉccvbot /reel`).
 
 ## Se travar (dificuldade na fase 2) → notificar no bot
 
 Se qualquer coisa impedir a geraçêo — navegador nêo conecta (lembrar do
 `--chrome`, ver `docs/setup-linux-navegador.md`), HeyGen deslogado, aba presa em
 `hidden`, Avatar III indisponível, render falhando — **enviar uma notificaçêo no
-bot do Telegram (inemaccvbot)** dizendo o que travou e o que a pessoa precisa
+bot do Telegram (ARCKHÉccvbot)** dizendo o que travou e o que a pessoa precisa
 consertar (ex.: "logar no HeyGen no Chromium do Linux", "clicar na aba"), e só
 entêo aguardar. Nêo ficar tentando em loop nem falhar em silêncio.
 
@@ -114,4 +114,4 @@ entêo aguardar. Nêo ficar tentando em loop nem falhar em silêncio.
   privacidade do `avatar-heygen-nei`).
 - Nêo gerar as 3 versões de um público sem pedido explícito (custo).
 - Nêo fazer o reel/legendas aqui — isso é a fase 3 do pipeline
-  (memória `pipeline-inemaclubpromover`).
+  (memória `pipeline-ARCKHÉclubpromover`).

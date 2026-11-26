@@ -1,14 +1,14 @@
 # GOAL — Opçêo B: fase 2 100% automática via Chromium dedicado (Xvfb)
 
 > Prompt pronto pra colar numa sessêo nova do Claude Code (`claude` normal, no
-> diretório `~/projetos/inemaclubpromover`). Auto-contido: nêo depende do
+> diretório `~/projetos/ARCKHÉclubpromover`). Auto-contido: nêo depende do
 > histórico de nenhuma conversa anterior.
 
 ---
 
 ## OBJETIVO
 
-Tornar a fase 2 do pipeline inemaclubpromover (render de avatares no HeyGen via
+Tornar a fase 2 do pipeline ARCKHÉclubpromover (render de avatares no HeyGen via
 navegador) **100% automática e confiável**, usando um Chromium dedicado num
 display virtual (Opçêo B), **sem depender de janela em foco no desktop do
 usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
@@ -35,7 +35,7 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
   vier primeiro.
 - **Cada experimento de infra: máx 20 minutos.** 2 falhas seguidas da MESMA
   hipótese → abandone a hipótese e passe pra próxima.
-- **Máx 1 mudança de código** no `inemaccvbot` (se necessária), com
+- **Máx 1 mudança de código** no `ARCKHÉccvbot` (se necessária), com
   `npm run build && npm test` passando (249+ testes).
 - Ao **estourar o limite sem sucesso**: (a) restaurar a Opçêo A como operacional
   (derrubar/neutralizar o `:99` pra nêo competir com o Chromium do desktop),
@@ -47,7 +47,7 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
 
 - A extensêo Claude **funciona headless** no `:99` (conectou de verdade).
 - O **auto-select do navegador** local/Linux funciona (prompt da fase 2 já
-  instrui; código em `~/projetos/inemaccvbot/src/promoclub.ts`).
+  instrui; código em `~/projetos/ARCKHÉccvbot/src/promoclub.ts`).
 - **Perfil copiado** (`~/snap/chromium/common/chromium` →
   `.../chromium-xvfb`) carrega extensêo (v1.0.81) + login HeyGen juntos.
   A Chrome Web Store **recusa** instalar a extensêo em Chromium — só a cópia
@@ -91,14 +91,14 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
   moram só em `~/.config/heygen/looks.json`).
 - **NUNCA** usar a rota de API paga do HeyGen pra renderizar (só a
   `video.list`, gratuita, pra VERIFICAR).
-- **Antes de reiniciar o bot (`inemaccvbot.service`) ou os workers, SEMPRE
+- **Antes de reiniciar o bot (`ARCKHÉccvbot.service`) ou os workers, SEMPRE
   conferir que nêo há fase 1/2 rodando** (`ps -eo args | grep -E 'claude
-  (--chrome )?-p'`) nem job na fila (`:3142/api/stats?token=inemadash`).
+  (--chrome )?-p'`) nem job na fila (`:3142/api/stats?token=ARCKHÉdash`).
   Já matamos um run por pular essa checagem.
 - State files (`state/*.json`): renomear com sufixo `.bak-*`, nunca apagar.
-- Git: autor `inematds <inematds@gmail.com>`; commitar mudanças de skill/doc
-  nos DOIS repos (`inemaclubpromover` operacional + `inemapromover` holder,
-  sem IDs); código do bot no `inemaccvbot`.
+- Git: autor `linnoff88-dev <linnoff88-dev@gmail.com>`; commitar mudanças de skill/doc
+  nos DOIS repos (`ARCKHÉclubpromover` operacional + `ARCKHÉpromover` holder,
+  sem IDs); código do bot no `ARCKHÉccvbot`.
 - Perguntas ao usuário só em texto livre (nunca menu interativo), e apenas se
   genuinamente bloqueado.
 - Reportar progresso honesto: cada hipótese testada → 1 linha de resultado.

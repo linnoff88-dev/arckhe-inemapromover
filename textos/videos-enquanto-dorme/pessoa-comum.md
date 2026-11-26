@@ -17,14 +17,14 @@ Enquanto você trabalha, cozinha ou dorme, suas redes continuam publicando.
 
 Isso se chama produzir conteúdo em escala.
 
-O passo a passo pra criar o seu avatar, de graça, está no inema.club.
+O passo a passo pra criar o seu avatar, de graça, está no ARCKHÉ AI.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
 - Gancho (0-3s): headline-choque "EU NêO GRAVEI ESTE VÍDEO 😴"
 - Durante a mecânica: cards 1-2-3 — **GRAVA UMA VEZ** → **ESCREVE O TEXTO** → **O AVATAR GRAVA POR VOCÊ**
 - Ao dizer "escala": palavra **ESCALA** grande na tela
-- Final: CTA fixo "Saiba mais no inema.club"
+- Final: CTA fixo "Saiba mais no ARCKHÉ AI"
 
 ## Versêo 2 — Você repete o mesmo esforço todo dia
 
@@ -40,14 +40,14 @@ Um roteiro vira um vídeo. Dez roteiros viram dez vídeos. No mesmo dia.
 
 É assim que criadores mantêm as redes ativas sem viver na frente da câmera.
 
-A trilha gratuita pra montar o seu avatar está no inema.club.
+A trilha gratuita pra montar o seu avatar está no ARCKHÉ AI.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
 - Gancho (0-3s): headline-choque "CANSADO DE GRAVAR TODO DIA?"
 - Durante "dez roteiros": cards de prova — **1 ROTEIRO = 1 VÍDEO** → **10 ROTEIROS = 10 VÍDEOS** → **NO MESMO DIA**
 - Palavra-chave âmbar: **AVATAR**
-- Final: CTA fixo "Saiba mais no inema.club"
+- Final: CTA fixo "Saiba mais no ARCKHÉ AI"
 
 ## Versêo 3 — A fábrica que trabalha de madrugada
 
@@ -63,17 +63,17 @@ Sua página continua viva no feriado, nas férias, na madrugada.
 
 Antes, isso era coisa de quem tinha equipe. Hoje, dá pra montar sozinho, num fim de semana.
 
-O guia gratuito do avatar digital está no inema.club.
+O guia gratuito do avatar digital está no ARCKHÉ AI.
 
 ### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
 - Gancho (0-3s): headline-choque "PUBLICANDO ÀS 3H DA MANHê... DORMINDO 😴"
 - Durante "funcionário que nunca cansa": cards — **FERIADO ✓** → **FÉRIAS ✓** → **MADRUGADA ✓**
 - Palavra-chave âmbar: **FÁBRICA DE VÍDEOS**
-- Final: CTA fixo "Saiba mais no inema.club"
+- Final: CTA fixo "Saiba mais no ARCKHÉ AI"
 
 ## ESTRUTURA
 
-Fórmula: dor → possibilidade → demonstraçêo → trilha gratuita (CTA inema.club).
+Fórmula: dor → possibilidade → demonstraçêo → trilha gratuita (CTA ARCKHÉ AI).
 Falada: identificaçêo → promessa → mecânica em 3 passos → prova → caso de uso do público → nome da técnica → CTA.
 Gatilho pessoa-comum: "dá pra fazer muito melhor com truques simples" — sem jargêo (nada de "workflow/agente/render"); artefato nomeado no CTA (passo a passo / trilha / guia do avatar, gratuito).

@@ -1,7 +1,7 @@
-# Catálogo REAL do INEMA.club — referência para CTAs da fase 1
+# Catálogo REAL do ARCKHÉ AI — referência para CTAs da fase 1
 
 Use APENAS nomes desta lista ao nomear uma trilha/curso/projeto no CTA — NUNCA invente.
-Se nada encaixar bem no assunto, use o CTA genérico-seguro: "a trilha de IA do seu perfil no inema.club".
+Se nada encaixar bem no assunto, use o CTA genérico-seguro: "a trilha de IA do seu perfil no ARCKHÉ AI".
 Lista parcial (os itens mais representativos por tema; o catálogo completo tem 230+ cursos e 159 projetos).
 
 ## Claude Code (73 cursos)
@@ -18,7 +18,7 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 - 🆓 CCOpen - Claude Code de Graça ou por Quase Nada
 - 📊 CCTop - Mestre em Contexto e Tokens
 - ⚡ CCXCX - Claude e Codex Tool-Agnostic AI Coding
-- 🧠 Cérebro INEMA — Segundo Cérebro com 3 Cérebros
+- 🧠 Cérebro ARCKHÉ — Segundo Cérebro com 3 Cérebros
 - …+59 outros de Claude Code
 
 ## Agentes (29 cursos)
@@ -61,17 +61,17 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 ## Vídeo (13 cursos)
 - 🎬 AI Filmmaking — Parte 1
 - 🎬 claude-video — /watch: input de vídeo multi-host (Claude Code, Codex, +50)
-- 🎬 Formaçêo Cinema com IA
-- 🎭 inemaref — Foto vira história em quadrinhos
+- 🎬 Formaçêo CARCKHÉ com IA
+- 🎭 ARCKHÉref — Foto vira história em quadrinhos
 - 🪄 PixFlow — Imagens estáticas viram filme
-- 🎬 Prompt Director - Imagens e Cinema com IA
-- 🎬 Recursos de Vídeo — Catálogo do Ecossistema INEMA
+- 🎬 Prompt Director - Imagens e CARCKHÉ com IA
+- 🎬 Recursos de Vídeo — Catálogo do Ecossistema ARCKHÉ
 - 🎬 Remotion - Vídeo Programático com React
 - 🖱️ video-demonstrativo — Walkthrough narrado do seu app
 - 🎬 video-explicativo — Vídeo narrado a partir de um assunto
 - 🎞️ video-plan-editor — Plano de Ediçêo de Vídeo
 - 🏭 videoprodutor — O Produtor de Vídeo Profissional
-- 🎬 videos-cursos-inema — Cursos viram vídeos narrados
+- 🎬 videos-cursos-ARCKHÉ — Cursos viram vídeos narrados
 
 ## Design (6 cursos)
 - 🎨 10 Cara Design — Character Design Styles

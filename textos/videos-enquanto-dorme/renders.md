@@ -10,5 +10,5 @@ Fase 3: pessoa-comum-v1 → job mkivideos **#109** [done 2026-07-18 20:29] →
 `~/projetos/yt-pub-lives21/imports/videos/` (pasta criada mínima em 2026-07-18,
 SEM config de canal YouTube — setup do lives21 pendente com o usuário).
 
-Config: Avatar III · voz INEMA TIME · 16:9 · 1080p · MP4 · 25fps · marca d'água off.
+Config: Avatar III · voz ARCKHÉ TIME · 16:9 · 1080p · MP4 · 25fps · marca d'água off.
 Notas: gerado no Chromium Linux (Browser 1). Havia 2 navegadores conectados na extensêo (Linux + Windows); rascunhos "Vídeo sem título" órfêos foram criados durante o setup — podem ser apagados manualmente.

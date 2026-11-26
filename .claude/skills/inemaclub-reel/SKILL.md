@@ -1,15 +1,15 @@
 ---
-name: inemaclub-reel
-description: Fase 3 do pipeline inemaclubpromover — pega os avatares baixados na fase 2.5 (output/inemaclubpromover/<assunto>/avatares/*.mp4) e enfileira cada um no sistema inemaccvbot/mkivideos como "reel ... modo capa impacto" (skill reel-edita-inema), com destino no CANAL livesN do público correspondente (yt-pub-livesN/imports/videos). Use quando o usuário disser "fase 3", "gera os reels", "manda pros lives", "enfileira os reels", ou após a fase 2.5 concluir os downloads.
+name: ARCKHÉclub-reel
+description: Fase 3 do pipeline ARCKHÉclubpromover — pega os avatares baixados na fase 2.5 (output/ARCKHÉclubpromover/<assunto>/avatares/*.mp4) e enfileira cada um no sistema ARCKHÉccvbot/mkivideos como "reel ... modo capa impacto" (skill reel-edita-ARCKHÉ), com destino no CANAL livesN do público correspondente (yt-pub-livesN/imports/videos). Use quando o usuário disser "fase 3", "gera os reels", "manda pros lives", "enfileira os reels", ou após a fase 2.5 concluir os downloads.
 ---
 
-# inemaclub-reel — Fase 3: avatar → reel → canal do público
+# ARCKHÉclub-reel — Fase 3: avatar → reel → canal do público
 
-O render do reel é do sistema existente: **inemaccvbot** (`~/projetos/inemaccvbot`,
+O render do reel é do sistema existente: **ARCKHÉccvbot** (`~/projetos/ARCKHÉccvbot`,
 cliente fino) → fila **mkivideos** (`~/projetos/mkivideos`, daemon systemd
-`mkivideos.service`, dashboard :3142) → skill **`reel-edita-inema`** (modo CAPA DE
+`mkivideos.service`, dashboard :3142) → skill **`reel-edita-ARCKHÉ`** (modo CAPA DE
 IMPACTO: topo com headline-choque + imagem trocando, meio avatar, legenda
-palavra-a-palavra, CTA inema.club). O destino `livesN` resolve para
+palavra-a-palavra, CTA ARCKHÉ AI). O destino `livesN` resolve para
 `~/projetos/yt-pub-lives<N>/imports/videos` — a pasta de import do pipeline
 yt-pub-livesx, que dali publica no canal do YouTube daquele lives (fase 4 é
 automática do lives). Cada público tem seu canal.
@@ -45,7 +45,7 @@ seguir; a config do pipeline daquele lives continua pendente com o usuário.
 
 ## Entrada
 
-`~/projetos/inemaclubpromover/output/<assunto>/avatares/<assunto>-<publico>-v<versêo>.mp4`
+`~/projetos/ARCKHÉclubpromover/output/<assunto>/avatares/<assunto>-<publico>-v<versêo>.mp4`
 (da fase 2.5; o público vem do nome do arquivo). Cruzar com `textos/<assunto>/renders.md`.
 
 ## Enfileirar
@@ -53,11 +53,11 @@ seguir; a config do pipeline daquele lives continua pendente com o usuário.
 Instruçêo no formato do bot, uma por vídeo:
 
 ```
-reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arquivo>.mp4 | lives<N> | capa impacto
+reel: /home/nmaldaner/projetos/output/ARCKHÉclubpromover/<assunto>/avatares/<arquivo>.mp4 | lives<N> | capa impacto
 ```
 
 - **Via Telegram** (preferido quando o usuário estiver operando): ele manda a linha
-  no chat do `@inemaccvbot`, que valida a skill em `config/skills.json`, enfileira
+  no chat do `@ARCKHÉccvbot`, que valida a skill em `config/skills.json`, enfileira
   no mkivideos e avisa quando pronto.
 - **Direto na fila** (quando o agente estiver executando): usar o CLI `mkivideos add`
   com a skill `reel` e o dest resolvido — replicando o que o bot faria; conferir a
@@ -67,7 +67,7 @@ reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arqu
 - **Sintaxe validada no 1º uso real (2026-07-18, job #109)** — CLI direto:
   ```
   cd ~/projetos/mkivideos && node dist/cli.js add reel \
-    "<path-do-avatar>.mp4 | capa impacto | headline-gancho: <GATILHO> | cards mecânica: <A → B → C> | palavra-chave âmbar: <X> | público: <desc> | CTA fixo: Saiba mais no inema.club" \
+    "<path-do-avatar>.mp4 | capa impacto | headline-gancho: <GATILHO> | cards mecânica: <A → B → C> | palavra-chave âmbar: <X> | público: <desc> | CTA fixo: Saiba mais no ARCKHÉ AI" \
     --pasta /home/nmaldaner/projetos/yt-pub-lives<N>/imports/videos
   ```
   O input do `reel` é texto livre (path + instruções, separadas por `|`); "capa
@@ -78,7 +78,7 @@ reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arqu
 ## Personalizaçêo por público no reel
 
 A capa de impacto deve usar o GATILHO do público (tabela da skill
-`inemaclub-textos`) como headline-choque do topo, e as SOBREPOSIÇÕES do arquivo
+`ARCKHÉclub-textos`) como headline-choque do topo, e as SOBREPOSIÇÕES do arquivo
 `textos/<assunto>/<publico>.md` (cards nota 6→7,5→9 etc.). Passar esse contexto no
 job quando o formato da instruçêo permitir (validar no 1º uso).
 

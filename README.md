@@ -1,4 +1,4 @@
-ï»¿# inemapromover
+ï»¿# ARCKHÉpromover
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,7 +6,7 @@
 </div>
 
 
-FêÂ¡brica de reels de divulgaêÂ§êÂ£o do **INEMA.club**, segmentados por pêÂºblico:
+FêÂ¡brica de reels de divulgaêÂ§êÂ£o do **ARCKHÉ AI**, segmentados por pêÂºblico:
 **texto ê¢â â avatar HeyGen ê¢â â reel empilhado (capa de impacto) ê¢â â canal YouTube do
 pêÂºblico correspondente.**
 
@@ -17,7 +17,7 @@ como skills do [Claude Code](https://claude.com/product/claude-code) sobre
 serviêÂ§os que jêÂ¡ existem no ambiente do operador (HeyGen, bot de ediêÂ§êÂ£o,
 canais do YouTube).
 
-ê°Å¸ââ Guia de uso publicado: **https://inematds.github.io/inemapromover/guia/**
+ê°Å¸ââ Guia de uso publicado: **https://linnoff88-dev.github.io/arckhe-/guia/**
 
 ## SumêÂ¡rio
 
@@ -34,7 +34,7 @@ canais do YouTube).
 
 ## VisêÂ£o geral
 
-O `inemapromover` nêÂ£o êÂ© um app com interface prêÂ³pria ê¢â¬â êÂ© um **pipeline
+O `ARCKHÉpromover` nêÂ£o êÂ© um app com interface prêÂ³pria ê¢â¬â êÂ© um **pipeline
 orquestrado por skills do Claude Code**, cada fase acionada como um pedido em
 linguagem natural (ou o comando de skill correspondente) numa sessêÂ£o do
 Claude Code. Cada fase lêÂª a saêÂ­da da fase anterior e grava a sua prêÂ³pria,
@@ -45,7 +45,7 @@ dado do pipeline vive fora daqui.
 assunto
   ê¢ââ
   ê¢âÂ¼
-1. TEXTOS (inemaclub-textos)        ê¢â â textos/<assunto>/<publico>.md (3 versêÂµes cada)
+1. TEXTOS (ARCKHÉclub-textos)        ê¢â â textos/<assunto>/<publico>.md (3 versêÂµes cada)
   ê¢ââ
   ê¢âÂ¼
 2. AVATAR (heygen-avatar-nei-III)   ê¢â â vêÂ­deo de avatar no HeyGen (navegador)
@@ -54,7 +54,7 @@ assunto
 2.5 DOWNLOAD (heygen-download-nei)  ê¢â â output/<assunto>/avatares/*.mp4
   ê¢ââ
   ê¢âÂ¼
-3. REEL (inemaclub-reel)            ê¢â â enfileirado no mkivideos, 9:16 empilhado
+3. REEL (ARCKHÉclub-reel)            ê¢â â enfileirado no mkivideos, 9:16 empilhado
   ê¢ââ
   ê¢âÂ¼
 4. PUBLICAêâ¡êÆO (automêÂ¡tica)          ê¢â â canal YouTube do pêÂºblico (yt-pub-livesN)
@@ -70,10 +70,10 @@ ambiente do operador.
 | **Claude Code** | Executa cada fase como skill, a partir de um pedido em texto | CLI local |
 | **ExtensêÂ£o Claude in Chrome/Edge** | DêÂ¡ ao Claude Code controle do navegador logado no HeyGen | navegador do operador |
 | **HeyGen (estêÂºdio web)** | Gera o vêÂ­deo de avatar falando o roteiro da fase 1 | `app.heygen.com`, sessêÂ£o logada |
-| **inemaccvbot** | Bot de Telegram; comando `/promoclub` orquestra o pipeline inteiro (fase 1 ê¢â â fase 2 automêÂ¡tica ê¢â â watcher ê¢â â fase 3) | `~/projetos/inemaccvbot` |
+| **ARCKHÉccvbot** | Bot de Telegram; comando `/promoclub` orquestra o pipeline inteiro (fase 1 ê¢â â fase 2 automêÂ¡tica ê¢â â watcher ê¢â â fase 3) | `~/projetos/ARCKHÉccvbot` |
 | **`wmctrl`** | Foca a janela do Chromium automaticamente antes da fase 2 (sem isso, a aba fica `hidden` e trava) | pacote do sistema (`apt install wmctrl`) |
 | **mkivideos** | Daemon/fila que efetivamente monta e renderiza os reels | `~/projetos/mkivideos`, dashboard `:3142`/`:3143` |
-| **skill `reel-edita-inema`** | Motor de composiêÂ§êÂ£o do reel (modo "capa de impacto") usado pelo mkivideos | `~/.claude/skills/reel-edita-inema` |
+| **skill `reel-edita-ARCKHÉ`** | Motor de composiêÂ§êÂ£o do reel (modo "capa de impacto") usado pelo mkivideos | `~/.claude/skills/reel-edita-ARCKHÉ` |
 | **yt-pub-livesN** (N = 21ê¢â¬â31) | Um pipeline por pêÂºblico que publica o reel no canal YouTube correspondente | `~/projetos/yt-pub-lives21` ê¢â¬Â¦ `31` |
 
 ## InstalaêÂ§êÂ£o / prêÂ©-requisitos
@@ -91,10 +91,10 @@ skills (markdown) + um script Node standalone. O que precisa estar pronto
    em [`docs/setup-linux-navegador.md`](docs/setup-linux-navegador.md).
 
 2. **Conta HeyGen logada** no navegador usado pela extensêÂ£o, com o avatar
-   **"Nei Maldaner"**, voz **"INEMA TIME"** e motor **Avatar III** (o êÂºnico
+   **"Nei Maldaner"**, voz **"ARCKHÉ TIME"** e motor **Avatar III** (o êÂºnico
    ilimitado na assinatura ê¢â¬â Avatar IV/V sêÂ£o Premium e cobram por render).
 
-3. **`inemaccvbot` + `mkivideos` no ar** (o worker que efetivamente monta o
+3. **`ARCKHÉccvbot` + `mkivideos` no ar** (o worker que efetivamente monta o
    reel):
    ```bash
    pgrep -af 'dist/cli.js run'          # confere se os workers do mkivideos estêÂ£o de pêÂ©
@@ -122,7 +122,7 @@ skills (markdown) + um script Node standalone. O que precisa estar pronto
 Cada fase êÂ© pedida ao Claude Code em linguagem natural (ou pelo nome da
 skill); nêÂ£o sêÂ£o comandos de shell separados.
 
-### Fase 1 ê¢â¬â Textos (`inemaclub-textos`)
+### Fase 1 ê¢â¬â Textos (`ARCKHÉclub-textos`)
 
 Um assunto vira **3 versêÂµes de roteiro falado** (~35-40s cada) por pêÂºblico ê¢â¬â
 mesmo conteêÂºdo, gancho/linguagem/exemplo diferentes. Sai em
@@ -130,7 +130,7 @@ mesmo conteêÂºdo, gancho/linguagem/exemplo diferentes. Sai em
 vai falar), `SOBREPOSIêâ¡êâ¢ES` (cards/legendas do reel) e `ESTRUTURA`.
 
 ```
-/inemaclub-textos "assunto da campanha"
+/ARCKHÉclub-textos "assunto da campanha"
 ```
 
 Se nêÂ£o disser os pêÂºblicos, o default êÂ© `pessoa-comum`; "todos" gera para os
@@ -148,7 +148,7 @@ de slugs na skill ê¢â¬â nunca `avatar_id`/`voice_id` em arquivo).
 Use a skill heygen-avatar-nei-III para o assunto "<slug>"
 ```
 
-**AutomêÂ¡tica, via `/promoclub` do inemaccvbot**: o bot dispara a fase 1 e,
+**AutomêÂ¡tica, via `/promoclub` do ARCKHÉccvbot**: o bot dispara a fase 1 e,
 assim que ela termina, emenda a fase 2 sozinho (`claude --chrome -p`) ê¢â¬â
 sem precisar pedir de novo. Ver [Fase 2 e o navegador](#fase-2-e-o-navegador-requisitos-e-automaêÂ§êÂ£o)
 para os requisitos e o que fazer quando ela travar. Chamar a skill acima
@@ -166,7 +166,7 @@ Baixar nêÂ£o gasta crêÂ©dito, entêÂ£o usa API quando possêÂ­
 Use a skill heygen-download-nei para o assunto "<slug>"
 ```
 
-### Fase 3 ê¢â¬â Reel (`inemaclub-reel`)
+### Fase 3 ê¢â¬â Reel (`ARCKHÉclub-reel`)
 
 Enfileira cada avatar no `mkivideos`, em **modo "capa de impacto"**: topo com
 headline-choque (o gatilho do pêÂºblico) + imagem trocando, meio com o avatar,
@@ -174,13 +174,13 @@ base com o explicativo, legenda palavra-a-palavra e CTA fixo. Destino:
 `yt-pub-lives<N>/imports/videos` do pêÂºblico.
 
 ```
-Use a skill inemaclub-reel para o assunto "<slug>"
+Use a skill ARCKHÉclub-reel para o assunto "<slug>"
 ```
 
 Sintaxe direta na fila (o que o bot faz por trêÂ¡s):
 ```bash
 cd ~/projetos/mkivideos && node dist/cli.js add reel \
-  "<path-do-avatar>.mp4 | capa impacto | headline-gancho: <GATILHO> | palavra-chave êÂ¢mbar: <X> | CTA fixo: Saiba mais no inema.club" \
+  "<path-do-avatar>.mp4 | capa impacto | headline-gancho: <GATILHO> | palavra-chave êÂ¢mbar: <X> | CTA fixo: Saiba mais no ARCKHÉ AI" \
   --pasta ~/projetos/yt-pub-lives<N>/imports/videos
 ```
 
@@ -207,12 +207,12 @@ pasta de import, publica no YouTube e o bot avisa no Telegram quando termina.
 
 Gatilho/promessa de cada pêÂºblico (usado como gancho da fase 1 e headline da
 capa de impacto na fase 3) estêÂ¡ na tabela completa da skill
-`inemaclub-textos`.
+`ARCKHÉclub-textos`.
 
 ## Estrutura de pastas
 
 ```
-inemapromover/
+ARCKHÉpromover/
 ê¢âÅê¢ââ¬ê¢ââ¬ CLAUDE.md              # documentaêÂ§êÂ£o canêÂ´nica do pipeline (para o Claude Code)
 ê¢âÅê¢ââ¬ê¢ââ¬ README.md              # este arquivo
 ê¢âÅê¢ââ¬ê¢ââ¬ .claude/skills/        # as 4 skills do pipeline (fases 1, 2, 2.5, 3)
@@ -239,14 +239,14 @@ renderizam:
 1. AVATAR (fase 2, HeyGen)
    gerado em: HeyGen "Meus Projetos" (nuvem, têÂ­tulo <assunto>-<publico>-v<versêÂ£o>)
         ê¢ââ
-        ê¢âÂ¼ fase 2.5 (heygen-download-nei / watcher automêÂ¡tico do inemaccvbot)
-   baixado em: inemapromover/output/<assunto>/avatares/<titulo>.mp4
+        ê¢âÂ¼ fase 2.5 (heygen-download-nei / watcher automêÂ¡tico do ARCKHÉccvbot)
+   baixado em: ARCKHÉpromover/output/<assunto>/avatares/<titulo>.mp4
 
 2. REEL (fase 3, mkivideos)
    renderizado em: ~/projetos/mkivideos/renders/mkivideo-<jobId>-16.mp4
    (MKIVIDEOS_RENDER_DIR do mkivideos ê¢â¬â precisa ser ABSOLUTO, ver aviso abaixo)
         ê¢ââ
-        ê¢âÂ¼ watcher do inemaccvbot (applyReelDest, a partir do result_path do job)
+        ê¢âÂ¼ watcher do ARCKHÉccvbot (applyReelDest, a partir do result_path do job)
    copiado para: ~/projetos/yt-pub-lives<N>/imports/videos/mkivideo-<jobId>-16.mp4
    (cêÂ³pia por padrêÂ£o ê¢â¬â o original fica em renders/; sêÂ³ apaga se o job pedir "mover")
 
@@ -257,14 +257,14 @@ renderizam:
 > ê¢Å¡Â ê¯Â¸Â **O mkivideos sêÂ³ deve subir via `systemctl --user restart mkivideos.service`,
 > nunca `nohup`/`node dist/cli.js` cru.** O unit systemd define `MKIVIDEOS_RENDER_DIR`
 > absoluto; sem ele o worker grava `result_path` relativo no banco ê¢â¬â ele mesmo resolve
-> esse caminho (mesmo cwd), mas o watcher do `inemaccvbot` nêÂ£o (cwd diferente), e a
+> esse caminho (mesmo cwd), mas o watcher do `ARCKHÉccvbot` nêÂ£o (cwd diferente), e a
 > cêÂ³pia pro `yt-pub-lives<N>` falha com `ENOENT` mesmo com o `.mp4` intacto em
 > `renders/`. **Incidente real (2026-07-19)**: exatamente isso aconteceu com 5 reels em
 > sequêÂªncia (jobs #120ê¢â¬â124) depois de um restart manual via `nohup` ê¢â¬â corrigido
 > voltando ao restart via systemd; os 5 arquivos foram recuperados e copiados na mêÂ£o
 > (estavam intactos, sêÂ³ nêÂ£o tinham sido entregues). Detalhes têÂ©cnicos completos nos
-> READMEs de [`mkivideos`](https://github.com/inematds/mkivideos#readme) e
-> [`inemaccvbot`](https://github.com/inematds/inemaccvbot#readme) (seêÂ§êÂ£o 7.1).
+> READMEs de [`mkivideos`](https://github.com/linnoff88-dev/mkivideos#readme) e
+> [`ARCKHÉccvbot`](https://github.com/linnoff88-dev/ARCKHÉccvbot#readme) (seêÂ§êÂ£o 7.1).
 
 ## Dicas e pontos de atenêÂ§êÂ£o
 
@@ -285,7 +285,7 @@ renderizam:
 - **Confira os defaults do editor HeyGen a cada navegador novo.** JêÂ¡
   aconteceu de abrir com avatar "Annie" / voz "Annie - Lifelike" / motor
   Avatar IV (Premium!) em vez do padrêÂ£o do estêÂºdio ê¢â¬â sempre trocar para o
-  look do pêÂºblico (tabela da skill) / INEMA TIME / Avatar III antes de gerar.
+  look do pêÂºblico (tabela da skill) / ARCKHÉ TIME / Avatar III antes de gerar.
 - **Renders de avatar têÂªm custo/tempo** ê¢â¬â a fase 2 nunca gera as 3 versêÂµes
   de um pêÂºblico de uma vez sem pedido explêÂ­cito, e nunca usa a rota API
   (sêÂ³ a rota navegador, sem custo por estar na assinatura).
@@ -348,14 +348,14 @@ Regras duras).
 - **Posicionamento de marca**: sempre "uma das plataformas gratuitas de
   formaêÂ§êÂ£o prêÂ¡tica em IA mais completas do Brasil" ê¢â¬â nunca "a êÂºnica".
   Frase-mêÂ£e: *"NêÂ£o importa sua idade ou profissêÂ£o. Existe uma trilha de IA
-  para vocêÂª no INEMA.club."*
+  para vocêÂª no ARCKHÉ AI."*
 
 ## Roadmap
 
 - ~~Look por pêÂºblico~~ ê¢Åâ feito (2026-07-19) ê¢â¬â cada pêÂºblico tem seu look
   (tabela na skill `heygen-avatar-nei-III`), sêÂ³ slugs, sem `avatar_id`.
 - ~~Fase 2 automêÂ¡tica (disparo)~~ ê¢Åâ feito (2026-07-19) ê¢â¬â `/promoclub` do
-  `inemaccvbot` dispara a fase 2 sozinha apêÂ³s a fase 1, com verificaêÂ§êÂ£o real
+  `ARCKHÉccvbot` dispara a fase 2 sozinha apêÂ³s a fase 1, com verificaêÂ§êÂ£o real
   na API do HeyGen antes de declarar sucesso.
 - **Fase 2 confiêÂ¡vel (aba `visible`).** ê¢ÂÂ³ em andamento ê¢â¬â OpêÂ§êÂ£o A (reusar a aba
   aberta, feito) funciona com a janela em foco; OpêÂ§êÂ£o B (Chromium dedicado em
