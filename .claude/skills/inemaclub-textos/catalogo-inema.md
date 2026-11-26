@@ -10,7 +10,7 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 - 🧠 6 Pilares do Claude Code - Completa
 - ⚙️ Agentic OS - O Sistema Operacional do Trabalho com IA
 - ⚙️ AIS-OS — Seu AI Operating System no Claude Code
-- 🪝 Automação & Hooks no Claude Code
+- 🪝 Automaçêo & Hooks no Claude Code
 - 💰 cccache — Prompt Caching no Claude Code
 - ⚡ CCFast32 - 32 Hacks do Claude Code
 - 🖥️ CCGuide - Claude Code 2026
@@ -22,27 +22,27 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 - …+59 outros de Claude Code
 
 ## Agentes (29 cursos)
-- 🤖 Agentes: o Novo Office — Formação por Perfil
+- 🤖 Agentes: o Novo Office — Formaçêo por Perfil
 - 🧠 Agentes: o Novo Office — Profissional Liberal
 - 🤖 Agentic Básico
 - 🤖 Agentic Engineering Masterclass
-- 🧭 Arquiteto de Execução — Paralelo × Sequencial para Agentes
-- 🧠 Arquitetura de Intenção da IA — Curso Completo (Método JARVIS)
+- 🧭 Arquiteto de Execuçêo — Paralelo × Sequencial para Agentes
+- 🧠 Arquitetura de Intençêo da IA — Curso Completo (Método JARVIS)
 - 🎓 CAIP - Certified AI Professional
 - 🦌 DeerFlow 2.0 - Framework de Agentes ByteDance
 - 🗄️ Engenharia de Dados com IA
 - 🐝 Enxames de Agentes de IA
 - 🧠 FEA-IA - Engenharia de Agentes
-- 🧩 FEC - Formação de Engenharia de Contexto
+- 🧩 FEC - Formaçêo de Engenharia de Contexto
 - 🫀 HealthOS — Coach de Saúde Pessoal com IA
 - 📱 Hermes + NotebookLM - O Sistema de Agente AI Definitivo
 - …+15 outros de Agentes
 
-## Automação (11 cursos)
+## Automaçêo (11 cursos)
 - 🏭 AI Strategy Factory — Estratégia de IA Completa para Qualquer Empresa
-- ⚙️ Automação 2026
+- ⚙️ Automaçêo 2026
 - ⚡ FIA2026
-- ⚙️ Formação em Automação Estratégica com IA
+- ⚙️ Formaçêo em Automaçêo Estratégica com IA
 - ⚡ MAKE - Automações
 - 🎬 mkivideos — Fila de Vídeos com IA
 - 🔗 N8Nb - Fundamentos N8N
@@ -61,7 +61,7 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 ## Vídeo (13 cursos)
 - 🎬 AI Filmmaking — Parte 1
 - 🎬 claude-video — /watch: input de vídeo multi-host (Claude Code, Codex, +50)
-- 🎬 Formação Cinema com IA
+- 🎬 Formaçêo Cinema com IA
 - 🎭 inemaref — Foto vira história em quadrinhos
 - 🪄 PixFlow — Imagens estáticas viram filme
 - 🎬 Prompt Director - Imagens e Cinema com IA
@@ -69,7 +69,7 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 - 🎬 Remotion - Vídeo Programático com React
 - 🖱️ video-demonstrativo — Walkthrough narrado do seu app
 - 🎬 video-explicativo — Vídeo narrado a partir de um assunto
-- 🎞️ video-plan-editor — Plano de Edição de Vídeo
+- 🎞️ video-plan-editor — Plano de Ediçêo de Vídeo
 - 🏭 videoprodutor — O Produtor de Vídeo Profissional
 - 🎬 videos-cursos-inema — Cursos viram vídeos narrados
 
@@ -90,7 +90,7 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 
 ## Engenharia (6 cursos)
 - 🔄 Engenharia Agentic - Workflow
-- 🧪 FEI - Engenharia da Intenção
+- 🧪 FEI - Engenharia da Intençêo
 - ✍️ FEP - Engenharia de Prompts
 - ✍️ FEP2 - Prompt Engineering Masterclass
 - 📊 FETD - Engenharia de Treinamentos de Dados
@@ -101,15 +101,15 @@ Lista parcial (os itens mais representativos por tema; o catálogo completo tem 
 
 ## Vibe Coding (4 cursos)
 - ✨ AIWCF - Vibe Coding
-- 🎯 Arquitetura de Intenção — Imersão Intensiva (3 dias)
+- 🎯 Arquitetura de Intençêo — Imersêo Intensiva (3 dias)
 - 🩺 IAMed - Medico IA-Native
 - ⚡ Vibe Coding - Da Ideia ao Produto
 
 ## Consultoria (6 cursos)
 - 🧭 Consultor de IA — Do Rótulo ao Resultado
-- 🗺️ Mapa do Cliente — Formação DICA
-- 🎯 PHA 2030 - Da Capacitação à Transformação
-- 🎯 Playbook-IA - Formação de Consultoria IA
+- 🗺️ Mapa do Cliente — Formaçêo DICA
+- 🎯 PHA 2030 - Da Capacitaçêo à Transformaçêo
+- 🎯 Playbook-IA - Formaçêo de Consultoria IA
 - 🎯 Profissional 2027 — Implementadores de IA para PMEs
 - 💰 Vendendo AIOS 2026
 

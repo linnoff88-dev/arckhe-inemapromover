@@ -1,7 +1,7 @@
-# GOAL — Opção B: fase 2 100% automática via Chromium dedicado (Xvfb)
+# GOAL — Opçêo B: fase 2 100% automática via Chromium dedicado (Xvfb)
 
-> Prompt pronto pra colar numa sessão nova do Claude Code (`claude` normal, no
-> diretório `~/projetos/inemaclubpromover`). Auto-contido: não depende do
+> Prompt pronto pra colar numa sessêo nova do Claude Code (`claude` normal, no
+> diretório `~/projetos/inemaclubpromover`). Auto-contido: nêo depende do
 > histórico de nenhuma conversa anterior.
 
 ---
@@ -10,22 +10,22 @@
 
 Tornar a fase 2 do pipeline inemaclubpromover (render de avatares no HeyGen via
 navegador) **100% automática e confiável**, usando um Chromium dedicado num
-display virtual (Opção B), **sem depender de janela em foco no desktop do
+display virtual (Opçêo B), **sem depender de janela em foco no desktop do
 usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
 
 ## CRITÉRIO DE SUCESSO (mensurável — só declare sucesso com TODOS atendidos)
 
 1. **Estabilidade de arranque:** 3 lançamentos consecutivos da stack `:99`
    (script/units) em que a janela do Chromium MAPEIA e RENDERIZA (screenshot via
-   `DISPLAY=:99 ffmpeg -f x11grab` mostra a página, não tela preta).
+   `DISPLAY=:99 ffmpeg -f x11grab` mostra a página, nêo tela preta).
 2. **Visibilidade comprovada:** com a página de teste
    `~/snap/chromium/common/vistest.html` (escreve o estado no título), o título
    da janela mostra `VIS_visible` de forma estável.
 3. **Prova real de ponta a ponta:** UMA rodada real de fase 2 (disparada pelo
    bot `/promoclub` ou pelo runner equivalente `claude --chrome -p`) gera
    **11/11 vídeos confirmados pela API do HeyGen** (`/v1/video.list`, chave em
-   `~/projetos/openpcbot/.env` → `HEYGEN_API_KEY`) **sem nenhuma intervenção
-   humana** durante a execução.
+   `~/projetos/openpcbot/.env` → `HEYGEN_API_KEY`) **sem nenhuma intervençêo
+   humana** durante a execuçêo.
 4. **Persistência:** a stack `:99` sobe via systemd user units (sobrevive a
    logout/reboot) e o resultado 1-2 se mantém após um restart da stack.
 
@@ -37,28 +37,28 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
   hipótese → abandone a hipótese e passe pra próxima.
 - **Máx 1 mudança de código** no `inemaccvbot` (se necessária), com
   `npm run build && npm test` passando (249+ testes).
-- Ao **estourar o limite sem sucesso**: (a) restaurar a Opção A como operacional
-  (derrubar/neutralizar o `:99` pra não competir com o Chromium do desktop),
-  (b) escrever postmortem na seção 7 de `docs/setup-linux-navegador.md` com o
+- Ao **estourar o limite sem sucesso**: (a) restaurar a Opçêo A como operacional
+  (derrubar/neutralizar o `:99` pra nêo competir com o Chromium do desktop),
+  (b) escrever postmortem na seçêo 7 de `docs/setup-linux-navegador.md` com o
   que foi tentado e por que falhou, (c) commitar e (d) PARAR — recomendar
   formalmente A (semi-automática) ou API paga como alternativas.
 
-## FATOS JÁ VALIDADOS EM PRODUÇÃO (2026-07-19 — não redescobrir, aproveitar)
+## FATOS JÁ VALIDADOS EM PRODUÇêO (2026-07-19 — nêo redescobrir, aproveitar)
 
-- A extensão Claude **funciona headless** no `:99` (conectou de verdade).
+- A extensêo Claude **funciona headless** no `:99` (conectou de verdade).
 - O **auto-select do navegador** local/Linux funciona (prompt da fase 2 já
   instrui; código em `~/projetos/inemaccvbot/src/promoclub.ts`).
 - **Perfil copiado** (`~/snap/chromium/common/chromium` →
-  `.../chromium-xvfb`) carrega extensão (v1.0.81) + login HeyGen juntos.
-  A Chrome Web Store **recusa** instalar a extensão em Chromium — só a cópia
+  `.../chromium-xvfb`) carrega extensêo (v1.0.81) + login HeyGen juntos.
+  A Chrome Web Store **recusa** instalar a extensêo em Chromium — só a cópia
   de perfil funciona.
 - Modo `--app` **renderizou perfeito uma vez** (janela única, sem barra de
   abas) — promissor.
 - **Problema nº1: mapeamento de janela intermitente no Xvfb** — ~2/3 dos
-  lançamentos ficam em tela preta (processo vivo, janela não mapeia; `xwininfo
+  lançamentos ficam em tela preta (processo vivo, janela nêo mapeia; `xwininfo
   -root -children` mostra só o Openbox). É O bug a resolver.
 - **Problema nº2: o editor do HeyGen abre em aba/janela de fundo** → nasce
-  `visibilityState === 'hidden'` e o editor tiptap não aceita digitação. A
+  `visibilityState === 'hidden'` e o editor tiptap nêo aceita digitaçêo. A
   skill `heygen-avatar-nei-III` já instrui reusar/ativar a aba — validar que
   obedece.
 - `wmctrl` é inútil (mutter ignora no desktop; desnecessário no `:99`).
@@ -71,14 +71,14 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
 
 1. **Estabilizar o mapeamento (20-40 min):** diagnosticar a tela preta —
    `/tmp/chromium99*.log`, testar SEM WM nenhum, testar `--ozone-platform=x11`
-   explícito, variar depth/resolução (24→16 bpp), remover `--start-maximized`,
+   explícito, variar depth/resoluçêo (24→16 bpp), remover `--start-maximized`,
    aumentar espera de arranque, testar ordem Xvfb→sleep→WM→sleep→chromium.
    Validar cada mudança com o vistest + screenshot 3x seguidas.
-2. **App mode como padrão:** relançar sempre com
+2. **App mode como padrêo:** relançar sempre com
    `--app="https://app.heygen.com/projects"` (janela única). Verificar como o
    fluxo da skill se comporta sem tab strip (o editor abre onde?).
 3. **Disciplina de abas na skill:** se multi-tab for inevitável, reforçar na
-   skill que após QUALQUER navegação/abertura o passo imediato é ATIVAR a aba
+   skill que após QUALQUER navegaçêo/abertura o passo imediato é ATIVAR a aba
    do editor (e fechar abas extras), verificando `visibilityState` antes de
    digitar.
 4. **Fallbacks exóticos** (só se sobrar orçamento): outro WM leve disponível,
@@ -92,7 +92,7 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
 - **NUNCA** usar a rota de API paga do HeyGen pra renderizar (só a
   `video.list`, gratuita, pra VERIFICAR).
 - **Antes de reiniciar o bot (`inemaccvbot.service`) ou os workers, SEMPRE
-  conferir que não há fase 1/2 rodando** (`ps -eo args | grep -E 'claude
+  conferir que nêo há fase 1/2 rodando** (`ps -eo args | grep -E 'claude
   (--chrome )?-p'`) nem job na fila (`:3142/api/stats?token=inemadash`).
   Já matamos um run por pular essa checagem.
 - State files (`state/*.json`): renomear com sufixo `.bak-*`, nunca apagar.
@@ -102,13 +102,13 @@ usuário** e **sem gastar créditos de API** (rota navegador/assinatura apenas).
 - Perguntas ao usuário só em texto livre (nunca menu interativo), e apenas se
   genuinamente bloqueado.
 - Reportar progresso honesto: cada hipótese testada → 1 linha de resultado.
-  Nunca declarar sucesso sem a verificação da API (critério 3).
+  Nunca declarar sucesso sem a verificaçêo da API (critério 3).
 
 ## AO TERMINAR
 
-- **Sucesso:** atualizar `docs/setup-linux-navegador.md` (seção 7: B validada,
+- **Sucesso:** atualizar `docs/setup-linux-navegador.md` (seçêo 7: B validada,
   como operar), criar as units systemd, commitar tudo, e **desativar a
-  dependência da Opção A** (documentar que a janela do desktop não precisa
+  dependência da Opçêo A** (documentar que a janela do desktop nêo precisa
   mais ficar em foco). Avisar o usuário com o resumo e a prova (11/11 na API).
 - **Falha (limite estourado):** executar o plano de saída descrito em LIMITES.
 
@@ -126,12 +126,12 @@ Todos os 4 critérios cumpridos, com prova:
 | 4. Persistência | `stack99.service` enabled; start + restart validados 2/2 |
 
 **Causa raiz da "flakiness" (achada na hipótese 1, em ~20 min):** os
-`pkill -f`/`pgrep -f` com "chromium-xvfb" no padrão matavam/casavam o PRÓPRIO
-wrapper bash (o cmdline do `bash -c` contém a string — exit 144). A janela não
+`pkill -f`/`pgrep -f` com "chromium-xvfb" no padrêo matavam/casavam o PRÓPRIO
+wrapper bash (o cmdline do `bash -c` contém a string — exit 144). A janela nêo
 era flaky: o launcher morria no meio. Fix: truque do colchete
 (`chromium-xvf[b]`) + scripts em arquivo. As demais hipóteses nem foram
 necessárias — o subagente da fase 2 resolveu o `hidden` sozinho com xdotool
 dentro do `:99`.
 
-Guia operacional do que ficou montado: `setup-linux-navegador.md`, seção 7.1.
+Guia operacional do que ficou montado: `setup-linux-navegador.md`, seçêo 7.1.
 Método usado para chegar aqui: `metodo-goal.md`.

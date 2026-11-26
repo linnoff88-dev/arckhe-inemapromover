@@ -1,16 +1,16 @@
 # inemapromover
 
-Fábrica de reels de divulgação do **INEMA.club** segmentados por público:
+Fábrica de reels de divulgaçêo do **INEMA.club** segmentados por público:
 texto → avatar HeyGen → reel empilhado (capa de impacto) → canal YouTube do público.
 
 **Regra do projeto: TODOS os dados do pipeline vivem NESTA pasta** (textos, output,
-renders.md, skills). Não usar `~/projetos/output` aqui.
+renders.md, skills). Nêo usar `~/projetos/output` aqui.
 
 ## Git
 
 Repo **privado** `inematds/inemapromover`. Autor/committer:
 `inematds <inematds@gmail.com>`. `output/` e `state/` ficam fora do git
-(.gitignore) — vídeos são grandes/regeneráveis e o estado de execução é dado
+(.gitignore) — vídeos sêo grandes/regeneráveis e o estado de execuçêo é dado
 de runtime (IDs de chat, jobs em andamento); o rastro fica nos `renders.md`.
 
 ## Pipeline (uma skill por fase, em `.claude/skills/`)
@@ -18,7 +18,7 @@ de runtime (IDs de chat, jobs em andamento); o rastro fica nos `renders.md`.
 | Fase | Skill | O que faz |
 |---|---|---|
 | 1 | `inemaclub-textos` | assunto → 3 versões de roteiro falado (~35-40s) por público, em `textos/<assunto>/<publico>.md` (seções FALA / SOBREPOSIÇÕES) |
-| 2 | `heygen-avatar-nei-III` | FALA → vídeo avatar no HeyGen, **sempre rota navegador** (Avatar III ilimitado; CLI só emergência). Look ÚNICO por ora ("Nei Maldaner"/"INEMA TIME"); look por público é evolução futura. Título `<assunto>-<publico>-v<versão>`, 16:9 1080p |
+| 2 | `heygen-avatar-nei-III` | FALA → vídeo avatar no HeyGen, **sempre rota navegador** (Avatar III ilimitado; CLI só emergência). Look ÚNICO por ora ("Nei Maldaner"/"INEMA TIME"); look por público é evoluçêo futura. Título `<assunto>-<publico>-v<versêo>`, 16:9 1080p |
 | 2.5 | `heygen-download-nei` | baixa os renders (rota A: URL via MCP/`video.list` + `deliver.mjs --no-send`, sem custo; rota B: navegador) para `output/<assunto>/avatares/` |
 | 3 | `inemaclub-reel` | enfileira cada avatar no **inemaccvbot/mkivideos** (`reel: <path> \| lives<N> \| capa impacto`, skill reel-edita-inema) no lives do público |
 | 4 | (automática) | o pipeline yt-pub-livesx de cada lives publica no canal YouTube; bot avisa no Telegram |
@@ -29,7 +29,7 @@ pessoa-comum=21 · jovens=22 · profissionais=23 · mulheres=24 · empreendedore
 tecnicos=26 · 40mais=27 · 60mais=28 · educadores=29 · criadores=30 · recolocacao=31.
 Gatilhos/promessas de cada público: tabela na skill `inemaclub-textos`.
 
-As pastas `~/projetos/yt-pub-lives21..31` serão criadas pelo usuário (padrão
+As pastas `~/projetos/yt-pub-lives21..31` serêo criadas pelo usuário (padrêo
 yt-pub-livesx). Se faltar na hora de enfileirar: criar o mínimo
 `yt-pub-lives<N>/imports/videos/` (autorizado), avisar, e a config do canal fica
 com o usuário.
@@ -43,7 +43,7 @@ com o usuário.
 ## Navegador no Linux (fase 2)
 
 Ver `docs/setup-linux-navegador.md`: iniciar o Claude Code com **`--chrome`**
-(senão a extensão pode não ser reconhecida em algumas máquinas/ARM64/Chromium
+(senêo a extensêo pode nêo ser reconhecida em algumas máquinas/ARM64/Chromium
 snap); se as abas criadas ficarem invisíveis/`hidden`, há mais de um navegador
 conectado — `list_connected_browsers` + `select_browser` para escolher o
 navegador certo; conferir avatar/voz/motor no editor (defaults podem vir
@@ -55,6 +55,6 @@ errados, ex.: Annie/Avatar IV).
   moram em `~/.config/heygen/looks.json` / navegador logado.
 - Render de avatar só pelo navegador (assinatura); nunca gastar créditos de API
   sem pedido explícito.
-- Posicionamento: dizer "uma das plataformas gratuitas de formação prática em IA
-  mais completas do Brasil" — nunca "a única". Frase-mãe: "Não importa sua idade
-  ou profissão. Existe uma trilha de IA para você no INEMA.club."
+- Posicionamento: dizer "uma das plataformas gratuitas de formaçêo prática em IA
+  mais completas do Brasil" — nunca "a única". Frase-mêe: "Nêo importa sua idade
+  ou profissêo. Existe uma trilha de IA para você no INEMA.club."

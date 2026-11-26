@@ -3,11 +3,11 @@
 Assunto: avatar digital com seu rosto e voz transformando roteiros em vídeos (conteúdo em escala).
 Público: pessoa comum / leigo · 3 versões · ~35-40s cada.
 
-## Versão 1 — O vídeo que se gravou sozinho
+## Versêo 1 — O vídeo que se gravou sozinho
 
 ### FALA (texto para o HeyGen — falar exatamente isto)
 
-Esse vídeo que você está assistindo agora? Eu não gravei ele. Eu estava dormindo.
+Esse vídeo que você está assistindo agora? Eu nêo gravei ele. Eu estava dormindo.
 
 Quem gravou foi o meu avatar digital: uma cópia minha, com meu rosto e minha voz, que transforma qualquer texto em vídeo pronto.
 
@@ -19,18 +19,18 @@ Isso se chama produzir conteúdo em escala.
 
 O passo a passo pra criar o seu avatar, de graça, está no inema.club.
 
-### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
+### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
-- Gancho (0-3s): headline-choque "EU NÃO GRAVEI ESTE VÍDEO 😴"
+- Gancho (0-3s): headline-choque "EU NêO GRAVEI ESTE VÍDEO 😴"
 - Durante a mecânica: cards 1-2-3 — **GRAVA UMA VEZ** → **ESCREVE O TEXTO** → **O AVATAR GRAVA POR VOCÊ**
 - Ao dizer "escala": palavra **ESCALA** grande na tela
 - Final: CTA fixo "Saiba mais no inema.club"
 
-## Versão 2 — Você repete o mesmo esforço todo dia
+## Versêo 2 — Você repete o mesmo esforço todo dia
 
 ### FALA (texto para o HeyGen — falar exatamente isto)
 
-Você já quis aparecer nas redes, mas desiste porque gravar dá trabalho: arruma luz, erra a fala, grava de novo, edita... e amanhã tem que fazer tudo outra vez.
+Você já quis aparecer nas redes, mas desiste porque gravar dá trabalho: arruma luz, erra a fala, grava de novo, edita... e amanhê tem que fazer tudo outra vez.
 
 Agora imagina gravar uma única vez na vida.
 
@@ -42,20 +42,20 @@ Um roteiro vira um vídeo. Dez roteiros viram dez vídeos. No mesmo dia.
 
 A trilha gratuita pra montar o seu avatar está no inema.club.
 
-### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
+### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
 - Gancho (0-3s): headline-choque "CANSADO DE GRAVAR TODO DIA?"
 - Durante "dez roteiros": cards de prova — **1 ROTEIRO = 1 VÍDEO** → **10 ROTEIROS = 10 VÍDEOS** → **NO MESMO DIA**
 - Palavra-chave âmbar: **AVATAR**
 - Final: CTA fixo "Saiba mais no inema.club"
 
-## Versão 3 — A fábrica que trabalha de madrugada
+## Versêo 3 — A fábrica que trabalha de madrugada
 
 ### FALA (texto para o HeyGen — falar exatamente isto)
 
-Existe gente publicando vídeo às três da manhã... dormindo.
+Existe gente publicando vídeo às três da manhê... dormindo.
 
-Não é mágica. É um avatar digital: uma versão sua, criada por IA, com seu rosto e sua voz.
+Nêo é mágica. É um avatar digital: uma versêo sua, criada por IA, com seu rosto e sua voz.
 
 Você monta ele uma vez. Depois, é como ter um funcionário que nunca cansa: você deixa os textos prontos, e ele grava um vídeo atrás do outro, do seu jeito de falar.
 
@@ -65,15 +65,15 @@ Antes, isso era coisa de quem tinha equipe. Hoje, dá pra montar sozinho, num fi
 
 O guia gratuito do avatar digital está no inema.club.
 
-### SOBREPOSIÇÕES DE TELA (fase do reel — NÃO falar)
+### SOBREPOSIÇÕES DE TELA (fase do reel — NêO falar)
 
-- Gancho (0-3s): headline-choque "PUBLICANDO ÀS 3H DA MANHÃ... DORMINDO 😴"
+- Gancho (0-3s): headline-choque "PUBLICANDO ÀS 3H DA MANHê... DORMINDO 😴"
 - Durante "funcionário que nunca cansa": cards — **FERIADO ✓** → **FÉRIAS ✓** → **MADRUGADA ✓**
 - Palavra-chave âmbar: **FÁBRICA DE VÍDEOS**
 - Final: CTA fixo "Saiba mais no inema.club"
 
 ## ESTRUTURA
 
-Fórmula: dor → possibilidade → demonstração → trilha gratuita (CTA inema.club).
-Falada: identificação → promessa → mecânica em 3 passos → prova → caso de uso do público → nome da técnica → CTA.
-Gatilho pessoa-comum: "dá pra fazer muito melhor com truques simples" — sem jargão (nada de "workflow/agente/render"); artefato nomeado no CTA (passo a passo / trilha / guia do avatar, gratuito).
+Fórmula: dor → possibilidade → demonstraçêo → trilha gratuita (CTA inema.club).
+Falada: identificaçêo → promessa → mecânica em 3 passos → prova → caso de uso do público → nome da técnica → CTA.
+Gatilho pessoa-comum: "dá pra fazer muito melhor com truques simples" — sem jargêo (nada de "workflow/agente/render"); artefato nomeado no CTA (passo a passo / trilha / guia do avatar, gratuito).

@@ -117,7 +117,7 @@
   <div class="glow"></div>
   <div class="wrap">
     <div>
-      <span class="chip">Pipeline de divulgação · INEMA.club</span>
+      <span class="chip">Pipeline de divulgaçêo · INEMA.club</span>
       <h1>Um assunto vira <span class="amb">reels</span> pra 11 públicos, sozinho.</h1>
       <p class="lead">Texto → avatar HeyGen → reel vertical com capa de impacto → canal do YouTube certo. Um pipeline de 4 fases, cada uma com sua skill, rodando sobre Claude Code.</p>
       <div class="cta">
@@ -132,11 +132,11 @@
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Fábrica de reels segmentados por público</h2>
-  <p class="sub">Um assunto entra de um lado; do outro saem reels verticais prontos, um por público, cada um com gancho e tom próprios — e a publicação no canal certo é automática.</p>
+  <p class="sub">Um assunto entra de um lado; do outro saem reels verticais prontos, um por público, cada um com gancho e tom próprios — e a publicaçêo no canal certo é automática.</p>
   <div class="grid g3">
-    <div class="card"><h3>📣 Um assunto, 11 públicos</h3><p>Cada assunto gera 3 versões de roteiro por público (pessoa comum, jovens, profissionais, mulheres, empreendedores, técnicos, 40+, 60+, educadores, criadores, recolocação) — cada um com seu próprio gatilho e promessa.</p></div>
+    <div class="card"><h3>📣 Um assunto, 11 públicos</h3><p>Cada assunto gera 3 versões de roteiro por público (pessoa comum, jovens, profissionais, mulheres, empreendedores, técnicos, 40+, 60+, educadores, criadores, recolocaçêo) — cada um com seu próprio gatilho e promessa.</p></div>
     <div class="card"><h3>🧑‍🎤 Avatar real, sem gravar</h3><p>O roteiro vira fala de avatar no HeyGen (Nei Maldaner / INEMA TIME), sempre pelo navegador, sem gastar créditos de API à toa.</p></div>
-    <div class="card"><h3>🎬 Reel pronto pro canal certo</h3><p>Cada avatar é empilhado num reel 9:16 com capa de impacto e enfileirado direto no canal YouTube do público correspondente — a publicação acontece sozinha.</p></div>
+    <div class="card"><h3>🎬 Reel pronto pro canal certo</h3><p>Cada avatar é empilhado num reel 9:16 com capa de impacto e enfileirado direto no canal YouTube do público correspondente — a publicaçêo acontece sozinha.</p></div>
   </div>
 </div></section>
 
@@ -149,17 +149,17 @@
     <span>2. Avatar HeyGen</span><span class="arr">→</span>
     <span>2.5 Download</span><span class="arr">→</span>
     <span>3. Reel empilhado</span><span class="arr">→</span>
-    <span>4. Publicação no canal</span>
+    <span>4. Publicaçêo no canal</span>
   </div>
   <div class="grid g3" style="margin-top:28px">
     <div class="card"><h3>1 · inemaclub-textos</h3><p>Assunto → 3 versões de roteiro falado (~35-40s) por público, com seções FALA e SOBREPOSIÇÕES.</p></div>
     <div class="card"><h3>2 · heygen-avatar-nei-III</h3><p>FALA → vídeo de avatar no HeyGen, sempre via navegador (Avatar III, ilimitado). Título padronizado, 16:9 1080p.</p></div>
     <div class="card"><h3>2.5 · heygen-download-nei</h3><p>Baixa os renders (via API quando possível, sem custo) para a pasta de output do assunto.</p></div>
-    <div class="card"><h3>3 · inemaclub-reel</h3><p>Enfileira cada avatar no bot de edição (mkivideos) em modo "capa impacto", no lives do público certo.</p></div>
+    <div class="card"><h3>3 · inemaclub-reel</h3><p>Enfileira cada avatar no bot de ediçêo (mkivideos) em modo "capa impacto", no lives do público certo.</p></div>
     <div class="card"><h3>4 · automática</h3><p>O pipeline do canal do público publica o reel no YouTube e avisa no Telegram.</p></div>
   </div>
   <h3 style="margin-top:36px;font-family:Sora;font-size:1.05rem">Onde cada arquivo mora</h3>
-  <p class="sub" style="margin-top:.4em">O avatar e o reel não moram neste repositório — só textos/estado ficam aqui. Os binários vivem nos projetos que renderizam.</p>
+  <p class="sub" style="margin-top:.4em">O avatar e o reel nêo moram neste repositório — só textos/estado ficam aqui. Os binários vivem nos projetos que renderizam.</p>
   <pre><span class="c"># avatar (fase 2) — nuvem HeyGen "Meus Projetos"</span>
 <span class="c"># ↓ fase 2.5 (download automático)</span>
 inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
@@ -175,14 +175,14 @@ inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
 <section id="componentes"><div class="wrap">
   <span class="chip">Componentes do sistema</span>
   <h2>As peças que o pipeline orquestra</h2>
-  <p class="sub">O <code>inemapromover</code> não roda sozinho: ele é a cola entre serviços que já precisam existir no ambiente do operador.</p>
+  <p class="sub">O <code>inemapromover</code> nêo roda sozinho: ele é a cola entre serviços que já precisam existir no ambiente do operador.</p>
   <div class="grid g4">
-    <div class="card"><h3>🖥️ Claude Code</h3><p>Executa cada fase como skill, a partir de um pedido em texto — não há comandos de shell separados por fase.</p></div>
-    <div class="card"><h3>🧩 Claude in Chrome/Edge</h3><p>Extensão que dá ao Claude Code controle do navegador logado no HeyGen (fases 2 e 2.5).</p></div>
-    <div class="card"><h3>🎭 HeyGen (estúdio web)</h3><p>Gera o vídeo de avatar falando o roteiro da fase 1 — <code>app.heygen.com</code>, sessão logada.</p></div>
+    <div class="card"><h3>🖥️ Claude Code</h3><p>Executa cada fase como skill, a partir de um pedido em texto — nêo há comandos de shell separados por fase.</p></div>
+    <div class="card"><h3>🧩 Claude in Chrome/Edge</h3><p>Extensêo que dá ao Claude Code controle do navegador logado no HeyGen (fases 2 e 2.5).</p></div>
+    <div class="card"><h3>🎭 HeyGen (estúdio web)</h3><p>Gera o vídeo de avatar falando o roteiro da fase 1 — <code>app.heygen.com</code>, sessêo logada.</p></div>
     <div class="card"><h3>🤖 inemaccvbot</h3><p>Bot de Telegram — o comando <code>/promoclub</code> orquestra o pipeline inteiro: fase 1 → fase 2 automática → watcher → fase 3.</p></div>
     <div class="card"><h3>⚙️ mkivideos</h3><p>Daemon/fila que efetivamente monta e renderiza os reels — dashboard nas portas <code>:3142</code>/<code>:3143</code>.</p></div>
-    <div class="card"><h3>🎬 skill reel-edita-inema</h3><p>Motor de composição usado pelo mkivideos no modo "capa de impacto" (topo/meio/base + legenda + CTA).</p></div>
+    <div class="card"><h3>🎬 skill reel-edita-inema</h3><p>Motor de composiçêo usado pelo mkivideos no modo "capa de impacto" (topo/meio/base + legenda + CTA).</p></div>
     <div class="card"><h3>📺 yt-pub-livesN</h3><p>Um pipeline por público (N = 21 a 31) que publica o reel pronto no canal YouTube correspondente.</p></div>
     <div class="card"><h3>🔑 .env do HeyGen</h3><p>Chave da API usada só na fase 2.5 (download sem custo) — fica fora deste repo, lida via <code>HEYGEN_ENV_PATH</code>.</p></div>
     <div class="card"><h3>🪟 wmctrl</h3><p>Foca a janela do Chromium sozinho antes da fase 2 — sem isso a aba do HeyGen fica <code>hidden</code> e trava.</p></div>
@@ -190,18 +190,18 @@ inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
 </div></section>
 
 <section id="pre"><div class="wrap">
-  <span class="chip">Instalação / pré-requisitos</span>
+  <span class="chip">Instalaçêo / pré-requisitos</span>
   <h2>O que precisa estar no ar</h2>
-  <p class="sub">Este repositório não precisa de <code>npm install</code> nem build — é composto de skills (markdown) + um script Node standalone. O que precisa estar pronto é o ambiente ao redor.</p>
+  <p class="sub">Este repositório nêo precisa de <code>npm install</code> nem build — é composto de skills (markdown) + um script Node standalone. O que precisa estar pronto é o ambiente ao redor.</p>
   <div class="grid g3">
-    <div class="card"><h3>1 · Navegador (Claude Code)</h3><p>Em Linux/ARM64 com Chromium via snap, a extensão só é reconhecida iniciando com a flag <code>--chrome</code>.</p><pre><span class="c"># obrigatório nesta configuração</span>
+    <div class="card"><h3>1 · Navegador (Claude Code)</h3><p>Em Linux/ARM64 com Chromium via snap, a extensêo só é reconhecida iniciando com a flag <code>--chrome</code>.</p><pre><span class="c"># obrigatório nesta configuraçêo</span>
 <span class="k">claude --chrome</span></pre></div>
-    <div class="card"><h3>2 · Conta HeyGen</h3><p>Logada no navegador da extensão, com avatar "Nei Maldaner", voz "INEMA TIME" e motor <b>Avatar III</b> (o único ilimitado na assinatura).</p></div>
-    <div class="card"><h3>3 · Bot de edição no ar</h3><p>Confirmar que os workers do mkivideos estão de pé e a fila responde antes de enfileirar.</p><pre><span class="c"># conferir workers</span>
+    <div class="card"><h3>2 · Conta HeyGen</h3><p>Logada no navegador da extensêo, com avatar "Nei Maldaner", voz "INEMA TIME" e motor <b>Avatar III</b> (o único ilimitado na assinatura).</p></div>
+    <div class="card"><h3>3 · Bot de ediçêo no ar</h3><p>Confirmar que os workers do mkivideos estêo de pé e a fila responde antes de enfileirar.</p><pre><span class="c"># conferir workers</span>
 <span class="k">pgrep -af</span> <span class="s">'dist/cli.js run'</span>
 <span class="c"># ping na fila</span>
 <span class="k">curl -s</span> localhost:3142/api/stats</pre></div>
-    <div class="card"><h3>4 · Canais por público</h3><p>Uma pasta <code>yt-pub-livesN</code> por público (N = 21..31). Se faltar, a fase 3 cria o mínimo pra não travar o job — a configuração do canal (credenciais YouTube) é do operador.</p><pre><span class="c"># mínimo se a pasta ainda não existir</span>
+    <div class="card"><h3>4 · Canais por público</h3><p>Uma pasta <code>yt-pub-livesN</code> por público (N = 21..31). Se faltar, a fase 3 cria o mínimo pra nêo travar o job — a configuraçêo do canal (credenciais YouTube) é do operador.</p><pre><span class="c"># mínimo se a pasta ainda nêo existir</span>
 <span class="k">mkdir -p</span> ~/projetos/yt-pub-lives21/imports/videos</pre></div>
     <div class="card"><h3>5 · Chave da API HeyGen</h3><p>Usada só na fase 2.5 (download sem custo), lida de um <code>.env</code> externo — nunca deste repo.</p><pre><span class="c"># antes de rodar a fase 2.5</span>
 <span class="k">export</span> HEYGEN_ENV_PATH=~/.config/heygen/.env
@@ -222,7 +222,7 @@ inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
 
   <div class="step"><div class="b">2</div><div>
     <h3>Gerar os avatares no HeyGen</h3>
-    <p>Pega a seção FALA de cada roteiro e gera o vídeo do avatar, sempre pelo navegador (créditos de API só com pedido explícito), com o look do público. Via <code>/promoclub</code> do bot, dispara sozinha assim que a fase 1 termina.</p>
+    <p>Pega a seçêo FALA de cada roteiro e gera o vídeo do avatar, sempre pelo navegador (créditos de API só com pedido explícito), com o look do público. Via <code>/promoclub</code> do bot, dispara sozinha assim que a fase 1 termina.</p>
 <pre><span class="k">Use a skill heygen-avatar-nei-III</span> para o assunto "&lt;slug&gt;"  <span class="c"># gera 1 vídeo por público, ou automático via /promoclub</span></pre>
   </div></div>
 
@@ -239,7 +239,7 @@ inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
-    <h3>Publicação automática</h3>
+    <h3>Publicaçêo automática</h3>
     <p>Nada a fazer aqui: o pipeline <code>yt-pub-livesN</code> de cada público publica o reel no YouTube e o bot avisa no Telegram quando terminar.</p>
 <pre><span class="c"># acompanhar o status de um job específico</span>
 <span class="k">node dist/cli.js status</span> &lt;id&gt;</pre>
@@ -247,36 +247,36 @@ inemapromover/output/&lt;assunto&gt;/avatares/&lt;titulo&gt;.mp4
 </div></section>
 
 <section id="dicas"><div class="wrap">
-  <span class="chip">Dicas e pontos de atenção</span>
+  <span class="chip">Dicas e pontos de atençêo</span>
   <h2>O que já mordeu no primeiro uso real</h2>
-  <p class="sub">Lições registradas em produção — para não repetir o mesmo tropeço.</p>
+  <p class="sub">Lições registradas em produçêo — para nêo repetir o mesmo tropeço.</p>
   <div class="grid g3">
-    <div class="card"><h3>🌐 Navegador é o elo mais frágil</h3><p>Sem <code>claude --chrome</code> a extensão não conecta. Abas "invisíveis" ou screenshots em branco geralmente são outro navegador pareado — use <code>list_connected_browsers</code> + <code>select_browser</code>.</p></div>
-    <div class="card"><h3>📎 Manifesto na pasta certa</h3><p>Chromium via snap só lê <code>~/snap/chromium/common/chromium/NativeMessagingHosts/</code> — se a extensão nunca conectar, copiar o manifesto do Claude Code pra lá.</p></div>
-    <div class="card"><h3>🎭 Confira os defaults do editor</h3><p>Já abriu com avatar "Annie" / motor Avatar IV (Premium!) em vez do padrão do estúdio. Sempre trocar para o look do público / INEMA TIME / Avatar III antes de gerar.</p></div>
-    <div class="card"><h3>🪟 Foco da aba é automático</h3><p>A fase 2 exige a janela do Chromium visível (tiptap do HeyGen não sincroniza numa aba <code>hidden</code>) — o bot resolve sozinho com <code>wmctrl -a Chromium</code> antes de cada render.</p></div>
-    <div class="card"><h3>🔌 RDP desconectado ≠ nada rodando</h3><p>Fechar o cliente RDP sem logout não mata o Xorg/Chromium — a sessão fica só "desconectada", em pé.</p></div>
-    <div class="card"><h3>🕵️ Verificação real, não confiança cega</h3><p>O subagente já reportou sucesso sem ter gerado nada (falso positivo visto em produção) — por isso a fase 2 sempre confere na API do HeyGen antes de declarar "concluído".</p></div>
-    <div class="card"><h3>💸 Render de avatar tem custo</h3><p>A fase 2 nunca gera as 3 versões de um público de uma vez sem pedido explícito, e nunca usa a rota API por padrão — só a rota navegador, sem custo extra na assinatura.</p></div>
-    <div class="card"><h3>📡 Ping antes de enfileirar</h3><p>Se o daemon do mkivideos estiver fora do ar, a fase 3 avisa e não enfileira — em vez de falhar em silêncio.</p></div>
-    <div class="card"><h3>📁 Canais podem não existir ainda</h3><p>A fase 3 cria o mínimo (<code>imports/videos/</code>) pra não travar o job, mas isso não configura o canal — a configuração real é responsabilidade do operador.</p></div>
+    <div class="card"><h3>🌐 Navegador é o elo mais frágil</h3><p>Sem <code>claude --chrome</code> a extensêo nêo conecta. Abas "invisíveis" ou screenshots em branco geralmente sêo outro navegador pareado — use <code>list_connected_browsers</code> + <code>select_browser</code>.</p></div>
+    <div class="card"><h3>📎 Manifesto na pasta certa</h3><p>Chromium via snap só lê <code>~/snap/chromium/common/chromium/NativeMessagingHosts/</code> — se a extensêo nunca conectar, copiar o manifesto do Claude Code pra lá.</p></div>
+    <div class="card"><h3>🎭 Confira os defaults do editor</h3><p>Já abriu com avatar "Annie" / motor Avatar IV (Premium!) em vez do padrêo do estúdio. Sempre trocar para o look do público / INEMA TIME / Avatar III antes de gerar.</p></div>
+    <div class="card"><h3>🪟 Foco da aba é automático</h3><p>A fase 2 exige a janela do Chromium visível (tiptap do HeyGen nêo sincroniza numa aba <code>hidden</code>) — o bot resolve sozinho com <code>wmctrl -a Chromium</code> antes de cada render.</p></div>
+    <div class="card"><h3>🔌 RDP desconectado ≠ nada rodando</h3><p>Fechar o cliente RDP sem logout nêo mata o Xorg/Chromium — a sessêo fica só "desconectada", em pé.</p></div>
+    <div class="card"><h3>🕵️ Verificaçêo real, nêo confiança cega</h3><p>O subagente já reportou sucesso sem ter gerado nada (falso positivo visto em produçêo) — por isso a fase 2 sempre confere na API do HeyGen antes de declarar "concluído".</p></div>
+    <div class="card"><h3>💸 Render de avatar tem custo</h3><p>A fase 2 nunca gera as 3 versões de um público de uma vez sem pedido explícito, e nunca usa a rota API por padrêo — só a rota navegador, sem custo extra na assinatura.</p></div>
+    <div class="card"><h3>📡 Ping antes de enfileirar</h3><p>Se o daemon do mkivideos estiver fora do ar, a fase 3 avisa e nêo enfileira — em vez de falhar em silêncio.</p></div>
+    <div class="card"><h3>📁 Canais podem nêo existir ainda</h3><p>A fase 3 cria o mínimo (<code>imports/videos/</code>) pra nêo travar o job, mas isso nêo configura o canal — a configuraçêo real é responsabilidade do operador.</p></div>
   </div>
 </div></section>
 
 <section id="roadmap"><div class="wrap">
   <span class="chip">Roadmap</span>
   <h2>O que já roda e o que vem a seguir</h2>
-  <p class="sub">Fases validadas ponta a ponta em produção e pendências conhecidas.</p>
-  <div class="phase"><div class="tag">Fase 1-3</div><div class="d"><strong>Pipeline validado ponta a ponta</strong><span>Textos → avatar → download → reel enfileirado, testado com assunto real em produção.</span></div></div>
-  <div class="phase"><div class="tag">Fase 4</div><div class="d"><strong>Publicação automática</strong><span>Depende dos pipelines yt-pub-livesN de cada público, configurados fora deste repo.</span></div></div>
-  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Look por público</strong><span>Hoje o avatar usa um look único ("Nei Maldaner" / "INEMA TIME"); variar o look por público é evolução planejada.</span></div></div>
-  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Capa de impacto</strong><span>Refinar a sintaxe da instrução "capa impacto" no bot, usando o gatilho do público como headline.</span></div></div>
+  <p class="sub">Fases validadas ponta a ponta em produçêo e pendências conhecidas.</p>
+  <div class="phase"><div class="tag">Fase 1-3</div><div class="d"><strong>Pipeline validado ponta a ponta</strong><span>Textos → avatar → download → reel enfileirado, testado com assunto real em produçêo.</span></div></div>
+  <div class="phase"><div class="tag">Fase 4</div><div class="d"><strong>Publicaçêo automática</strong><span>Depende dos pipelines yt-pub-livesN de cada público, configurados fora deste repo.</span></div></div>
+  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Look por público</strong><span>Hoje o avatar usa um look único ("Nei Maldaner" / "INEMA TIME"); variar o look por público é evoluçêo planejada.</span></div></div>
+  <div class="phase"><div class="tag">Futuro</div><div class="d"><strong>Capa de impacto</strong><span>Refinar a sintaxe da instruçêo "capa impacto" no bot, usando o gatilho do público como headline.</span></div></div>
 </div></section>
 
 <footer>
   <div class="wrap">
     <div class="pill">Claude Code</div><div class="pill">HeyGen</div><div class="pill">mkivideos</div>
-    <p style="margin-top:18px">inemapromover · pipeline interno de divulgação ·
+    <p style="margin-top:18px">inemapromover · pipeline interno de divulgaçêo ·
       <a href="https://github.com/inematds/inemapromover">inematds/inemapromover</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>

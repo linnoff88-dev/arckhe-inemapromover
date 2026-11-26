@@ -33,24 +33,24 @@ tabela — 11 vagas, uma por público.
 | criadores | lives30 |
 | recolocacao | lives31 |
 
-**Atenção — pastas faltantes:** hoje só existem `yt-pub-lives1..13` no disco;
-**lives21 a lives31 ainda não existem** e o bot RECUSA destino inexistente
+**Atençêo — pastas faltantes:** hoje só existem `yt-pub-lives1..13` no disco;
+**lives21 a lives31 ainda nêo existem** e o bot RECUSA destino inexistente
 (`resolveDest`). Antes do 1º uso, criar/clonar as pastas `yt-pub-lives21..31`
-(pelo padrão do yt-pub-livesx, cada uma configurada com o canal YouTube do
-respectivo público) — a CONFIGURAÇÃO do canal é setup do usuário/livesx. Se um
-destino não existir na hora de enfileirar: o usuário já autorizou (2026-07-18)
+(pelo padrêo do yt-pub-livesx, cada uma configurada com o canal YouTube do
+respectivo público) — a CONFIGURAÇêO do canal é setup do usuário/livesx. Se um
+destino nêo existir na hora de enfileirar: o usuário já autorizou (2026-07-18)
 criar o MÍNIMO `~/projetos/yt-pub-lives<N>/imports/videos/` (mkdir -p) só pra
-receber o arquivo — criar, avisar que foi criado sem configuração de canal, e
+receber o arquivo — criar, avisar que foi criado sem configuraçêo de canal, e
 seguir; a config do pipeline daquele lives continua pendente com o usuário.
 
 ## Entrada
 
-`~/projetos/inemaclubpromover/output/<assunto>/avatares/<assunto>-<publico>-v<versão>.mp4`
+`~/projetos/inemaclubpromover/output/<assunto>/avatares/<assunto>-<publico>-v<versêo>.mp4`
 (da fase 2.5; o público vem do nome do arquivo). Cruzar com `textos/<assunto>/renders.md`.
 
 ## Enfileirar
 
-Instrução no formato do bot, uma por vídeo:
+Instruçêo no formato do bot, uma por vídeo:
 
 ```
 reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arquivo>.mp4 | lives<N> | capa impacto
@@ -63,7 +63,7 @@ reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arqu
   com a skill `reel` e o dest resolvido — replicando o que o bot faria; conferir a
   sintaxe exata em `~/projetos/mkivideos` no 1º uso real.
 - Antes de enfileirar: `ping` nas filas (GET :3142/api/stats) — se o daemon estiver
-  fora, avisar e não enfileirar.
+  fora, avisar e nêo enfileirar.
 - **Sintaxe validada no 1º uso real (2026-07-18, job #109)** — CLI direto:
   ```
   cd ~/projetos/mkivideos && node dist/cli.js add reel \
@@ -75,12 +75,12 @@ reel: /home/nmaldaner/projetos/output/inemaclubpromover/<assunto>/avatares/<arqu
   Daemon: porta 3142, token do dashboard em `deploy/mkivideos.service`
   (`/api/stats?token=...`). Status: `node dist/cli.js status <id>`.
 
-## Personalização por público no reel
+## Personalizaçêo por público no reel
 
 A capa de impacto deve usar o GATILHO do público (tabela da skill
 `inemaclub-textos`) como headline-choque do topo, e as SOBREPOSIÇÕES do arquivo
 `textos/<assunto>/<publico>.md` (cards nota 6→7,5→9 etc.). Passar esse contexto no
-job quando o formato da instrução permitir (validar no 1º uso).
+job quando o formato da instruçêo permitir (validar no 1º uso).
 
 ## Saída
 
@@ -88,8 +88,8 @@ job quando o formato da instrução permitir (validar no 1º uso).
   no canal do público (fase 4).
 - Atualizar `textos/<assunto>/renders.md`: público → lives → status do job.
 
-## Não fazer
+## Nêo fazer
 
-- Não renderizar o reel manualmente aqui (o dono do render é o mkivideos).
-- Não criar/alterar pastas yt-pub-lives* nem publicar direto no YouTube.
-- Não enfileirar sem confirmar com o usuário a lista (vídeo × lives) quando for lote.
+- Nêo renderizar o reel manualmente aqui (o dono do render é o mkivideos).
+- Nêo criar/alterar pastas yt-pub-lives* nem publicar direto no YouTube.
+- Nêo enfileirar sem confirmar com o usuário a lista (vídeo × lives) quando for lote.
